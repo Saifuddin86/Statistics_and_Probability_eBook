@@ -267,7 +267,7 @@ For $t=2$ , $\mu=\lambda t=1.5*2=3$.
 
 **(i)** $P(X \le 2)=F(2)=0.423$
 
-\[For x=2 and $\mu \ \ or \ \lambda =3;$ corresponding probability in **Table A3** is 0.423\]
+[For x=2 and $\mu \ \ or \ \lambda =3$; corresponding probability in **Table A3** is 0.423]
 
 **(ii)** $P(X=4)=f(4)=F(4)-F(3)=0.815-0.647=0.168$
 

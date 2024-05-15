@@ -1,0 +1,922 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Statistics and Probability for Engineering},
+  pdfauthor={Mohammad Saifuddin},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Statistics and Probability for Engineering}
+\author{Mohammad Saifuddin}
+\date{2024-05-16}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\section*{Preface}\label{preface}
+\addcontentsline{toc}{section}{Preface}
+
+This study manual is specially written for the honors students of engineering discipline like CSE, EEE and Textile.
+
+\section{Introduction to statistics}\label{introduction-to-statistics}
+
+\section{Probability}\label{probability}
+
+\section{Random variable}\label{random-variable}
+
+\section{Some special discrete random variables}\label{some-special-discrete-random-variables}
+
+\subsection{Bernoulli r.v}\label{bernoulli-r.v}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{PMF}: \(P(X=x)=f(x)=p^x(1-p)^{1-x}; \ \ x=0,1\)
+\item
+  \textbf{Mean}: \(\mu=E(X)=p\)
+\item
+  \textbf{Variance}: \(\sigma^2 =E(X-\mu)^2=E(X^2)-\mu^2=p(1-p)\)
+\end{itemize}
+
+\subsection{Binomial r.v}\label{binomial-r.v}
+
+\begin{itemize}
+\tightlist
+\item
+  Consider an experiment of tossing a biased coin 3(number of trials, n) times.
+\item
+  Tosses are \emph{independent}, each toss has only \textbf{TWO} Outcomes-\emph{Head (Success)} and \emph{Tail (Failure)}
+\end{itemize}
+
+\textbf{This type of trial is called the \emph{Bernoulli Trial}}
+
+\begin{itemize}
+\tightlist
+\item
+  Suppose, \(P(H)=p\) and remain constant in each toss, consequently, \(P(T)=1-p=q\) (let).
+\end{itemize}
+
+\textbf{Suppose}, \(X=\# \ \ of\ \ head\ \ (successes)\ \  in\ \ 3\ \ tosses\)
+
+Now, what is the probability that, we will have \textbf{exactly 2 heads (success) in 3 tosses?}
+
+\textbf{That is,} \(P(X=2)=?\)
+
+Now, this can happen in the following ways:
+
+\[P(X=2)=P(HHT)+P(HTH)+P(THH)\] \[=P(H)P(H)P(T)+P(H)P(T)P(H)+P(T)P(H)P(H)\] {[}\emph{Since tosses are independent}{]}
+
+\[=p.p.q+p.q.p+q.p.p\] \[=p^2 q+p^2 q+p^2 q=3p^2 q\] \[\therefore P(X=2)=\binom{3}{2}p^2q^{3-2}\] If, \(p=0.6\) is given, then we can easily compute \(P(X=2)=f(2)\). Now, if we repeat the toss 10 times \((n=10)\), with \(P(H)=p\), what is the value of \(P(X=3)=f(3)\)?
+
+\textbf{So}, for \(n\) independent Bernoulli trials with a constant probability of success, \(p\), the probability mass function (PMF) of the random variable, \(X\)=\# of successes in \(n\) trials is given below:
+
+\begin{itemize}
+\item
+  \textbf{PMF}:\(P(X=x)=f(x)=\binom{n}{x} p^x (1-p)^x ;x=0,1,2,...,n\)
+\item
+  \textbf{CDF}: \(P(X\le x)=F(x)=f(0)+f(1)+...+f(x)\)
+\item
+  \textbf{Mean}:\(\mu=E(X)=np\)
+\item
+  \textbf{Variance}:\(\sigma^2 =np(1-p)\)
+\item
+  \textbf{We write} \(X\sim Binom(n,p)\)
+\item
+  \(n\) and \(p\) are said to be the \emph{parameters} of the Binomial distribution.
+\end{itemize}
+
+\textbf{N.B:} \(f(x)=F(x)-F(x-1)\) i.e \(f(3)=F(3)-F(2)\)
+
+\textbf{Probability plot of binomial r.v for different values of} \(p\) and shape characteristics
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\textbf{Finding Binomial probability manually}
+
+Suppose, \(X\sim Binom(n,p)\); where \(n=5\) and \(p=0.6\). Find, \emph{(i)} \(P(X=2)\) \emph{(ii)} \(P(X \le 2)\) \emph{(iii)} \(P(X\ge3)\).
+
+\textbf{\emph{Solution:}}
+
+\textbf{PMF of} \(X\): \(P(X=x)=f(x)=\binom{5}{x} 0.6^x (0.4)^{5-x} \ \ ;x=0,1,2,...,5\)
+
+\emph{(i)} \(P(X=2)=f(2)=\binom{5}{2} 0.6^2 (0.4)^{5-2}=0.2304\)
+
+\emph{(ii)} \(P(X \le 2)=F(2)=f(0)+f(1)+f(2)=0.0102+0.0768+0.2304=0.3174\)
+
+\emph{(iii)} \(P(X \ge 3)=f(3)+f(4)+f(5)=0.6826\)
+
+\textbf{\emph{Alternative:(iii)}}
+
+\(P(X \ge 3)=1-P(X< 3)=1-P(X \le 2)=1-F(2)=1-0.3174=0.6826\)
+
+\textbf{Finding Binomial probability using Binomial Table}
+
+In the end of any Statistics book there are some \textbf{Probability Distribution Table}. We can use these table to compute the required probability for \emph{specific values of the parameters} of certain probability distribution. Here I share the 1st page of \textbf{Binomial distribution table} \citep{baron_probability_2019}.
+
+\includegraphics{Binomial distribution_1st page.png}
+
+\textbf{Suppose}, \(X\sim Binom(n,p)\); where \(n=5\) and \(p=0.6\). Find, \emph{(i)} \(P(X=2)\) \emph{(ii)} \(P(X \le 2)\) \emph{(iii)} \(P(X \ge 3)\) using \textbf{Table}.
+
+\textbf{\emph{Solution:}}
+
+\emph{(i)} \(P(X=2)=f(2)=F(2)-F(1)=0.3174-0.0870=0.2304\).
+
+\emph{(ii)} \(P(X\le 2=F(2)=0.3174\)
+
+\emph{(iii)} \(P(X \ge 3)=1-P(X< 3)=1-F(2)=1-0.3174=0.6826\)
+
+\textbf{Exercise}\citep{walpole_probability_2017}
+
+\textbf{5.9} In testing a certain kind of truck tire over rugged terrain, it is found that 25\% of the trucks fail to complete the test run without a blowout. Of the next 15 trucks tested, find the probability that: (a) from 3 to 6 have blowouts; (b) fewer than 4 have blowouts; (c) more than 5 have blowouts.
+
+\emph{\textbf{Solution}:}
+
+Let, \emph{X= number of trucks that have blowouts}
+
+Given, \(n=15; \ \ p=Pr(blowout)=0.25; \ \ q=1-p=0.75\). Hence, \(X\sim Binom(n=15, p=0.25)\), that is:
+
+\[
+P(X=x)=f(x)=\binom{15}{x}(0.25)^x (0.75)^{15-x}; x=0,1,2,...,15.
+\]
+
+Now,
+
+\textbf{(a)} \(P(3\le X\le 6)=f(3)+f(4)+f(5)+f(6)\)=0.225+0.225+0.165+0.092=0.707.
+
+\textbf{\emph{Alternative:}} \(P(3\le X\le 6)=F(6)-F(2)=0.943-0.236=0.707\) \[from **Table**\]
+
+\textbf{(b)} \(P(X<4)=f(0)+f(1)+f(2)+f(3)\)=0.013+0.067+0.156+0.225=0.461.
+
+\textbf{\emph{Alternative:}} \(P(X< 4)=F(3)=0.461\) \[from **Table A2**\]
+
+\textbf{(c)} \(P(X > 5)=1-P(X \le 5)=1-F(5)\)=0.148
+
+\textbf{5.12} A traffic control engineer reports that 75\% of the vehicles passing through a checkpoint are from within the state. What is the probability that fewer than 4 of the next 9 vehicles are from out of state?
+
+\textbf{5.16} Suppose that airplane engines operate independently and fail with probability equal to 0.4. Assuming that a plane makes a safe flight if at least one-half of its engines run, determine whether a 4-engine plane or a 2-engine plane has the higher probability for a successful flight.
+
+\textbf{5.25} Suppose that for a very large shipment of integrated-circuit chips, the probability of failure for any one chip is 0.10. Assuming that the assumptions underlying the binomial distributions are met, find the probability that at most 3 chips fail in a random sample of 20.
+
+\textbf{Exercise}\citep{montgomery_applied_2014}
+
+\textbf{3-93} Let \(X\) be a binomial random variable with \(p = 0.1\) . and \(n = 10\). Calculate the following probabilities from the binomial probability mass function and from the binomial table in Appendix A and compare results. (a) \(P(X\le 2)\) (b) P(X\textgreater8) (c) P(X = 4) (d) \(P(5 \le X \le7)\)
+
+\textbf{3-115} The probability that a visitor to a Web site provides contact data for additional information is 0.01. Assume that 1000 visitors to the site behave independently. Determine the following probabilities: (a) No visitor provides contact data. (b) Exactly 10 visitors provide contact data. (c) More than 3 visitors provide contact data
+
+\textbf{Exercise}\citep{baron_probability_2019}
+
+\textbf{3.21.} A lab network consisting of 20 computers was attacked by a computer virus. This virus enters each computer with probability 0.4, independently of other computers. Find the probability that it entered at least 10 computers.
+
+\textbf{3.22.} Five percent of computer parts produced by a certain supplier are defective. What is the probability that a sample of 16 parts contains more than 3 defective ones?
+
+\emph{And so on\ldots.}
+
+\subsection{Poisson r.v}\label{poisson-r.v}
+
+The number of events occur randomly in an interval or in a region usually follows Poisson distribution. A famous French mathematician \emph{SimB4eon-Denis Poisson} (1781--1840) first introduced this distribution.
+
+\textbf{Example}
+
+The Poisson distribution may be useful to model variables like:
+
+\begin{itemize}
+\tightlist
+\item
+  The \emph{no. of calls} arrive at a customer care in \emph{15 minites}
+\item
+  The \emph{no. of arrivals} at a car wash in \emph{one hour}
+\item
+  The \emph{no. of repairs} needed in \emph{10 miles} of highway
+\item
+  The \emph{no. of leaks} in \emph{100 miles} of pipeline etc.
+\end{itemize}
+
+Usually Poisson distribution is used to evaluate probability of ``\emph{Rare}'' event.
+
+The probability mass function of the Poisson random variable \(X\), representing the \emph{number of outcomes} occurring in a given time interval denoted by \(t\), is:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{PMF}: \(P(X=x)=f(x)=\frac{e^{-\lambda t}(\lambda t)^x}{x!}; \ \ x=0,1,2,...,\infty.\)
+\end{itemize}
+
+Here, \(\lambda\) is called \emph{arrival rate} or \emph{average number of occurrences} in long-run. And only \emph{parameter} of Poisson distribution.
+
+\begin{itemize}
+\item
+  \textbf{Mean}: \(\mu=E(X)=\lambda t\)
+\item
+  \textbf{Variance}: \(\sigma^2 =\lambda t\)
+\item
+  \textbf{We write:} \(X\sim Pois(\lambda t)\)
+\end{itemize}
+
+\textbf{N.B}: The mean and variance of Poisson random random variable are \emph{identical}. This is the \emph{unique property} of Poisson r.v.
+
+\textbf{Probability of plot of poisson r.v for different values of} \(\lambda\) (for a fixed interval \(t=1\))
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+We can see that, for small \(\lambda\) the distribution of Poisson r.v is positively skewed and as the value of \(\lambda\) increases the distribution tends to symmetry.
+
+\textbf{Finding Poisson probability}
+
+Consider a discrete r.v say \(X\sim Pois(\lambda t)\). Suppose, \(\lambda =1.5\) and \(t=2\). Find, (i) P(X=4) (ii)\(P(X \le 2)\) (iii) \(P(X\ge3)\).
+
+\textbf{\emph{Solution}}:
+
+\textbf{PMF} of \(X\): \(P(X=x)=f(x)=\frac{e^{-\lambda t}(\lambda t)^x}{x!}; x=0,1,...,\infty.\)
+
+\textbf{(i)} For \(t=2\) , \(\mu=\lambda t=1.5*2=3\).
+
+So, \(P(X=4)=f(4)=\frac{e^{-3}(3)^4}{4!}\)=0.168.
+
+\textbf{(ii)} \(P(X\le2)=\sum_{x=0}^{2}f(x)=\sum_{x=0}^{2}\frac{e^{-3}(3)^x}{x!}=e^{-3}[\frac{3^0}{0!}+\frac{3^1}{1!}+\frac{3^2}{2!}]\)=0.423.
+
+\textbf{(iii)} \(P(X \ge 3)=1-P(X< 3)=1-P(X\le 2)=1-0.423=0.577\)
+
+\textbf{Finding Poisson probability using Table}
+
+We can use Poisson distribution table to compute Poisson probabilities. Here I share the 1st page of \textbf{Poisson distribution table} \citep{baron_probability_2019}.
+
+\includegraphics{Poisson Table.png}
+
+\textbf{Consider} a discrete r.v say \(X\sim Pois(\lambda t)\). Suppose, \(\lambda =1.5\) and \(t=2\). \textbf{Find}, (i) \(P(X \le 2)\) (ii)P(X=4)
+
+\textbf{\emph{Solution by using Table}}:
+
+For \(t=2\) , \(\mu=\lambda t=1.5*2=3\).
+
+\textbf{(i)} \(P(X \le 2)=F(2)=0.423\)
+
+{[}For x=2 and \(\mu \ \ or \ \lambda =3\); corresponding probability in \textbf{Table A3} is 0.423{]}
+
+\textbf{(ii)} \(P(X=4)=f(4)=F(4)-F(3)=0.815-0.647=0.168\)
+
+\textbf{Example 5.17:}\citep{walpole_probability_2017} During a laboratory experiment, the average number of radioactive particles passing through a counter in 1 millisecond is 4. What is the probability that 6 particles enter the counter in a given millisecond?
+
+\textbf{Example 5.18:}\citep{walpole_probability_2017} Ten is the average number of oil tankers arriving each day at a certain port. The facilities at the port can handle at most 15 tankers per day. What is the probability that on a given day tankers have to be turned away?
+
+\textbf{Example 3.8:}\citep{pishro-nik_introduction_2014} The number of emails that I get in a weekday can be modeled by a Poisson distribution with an average of 0.2 emails per minute.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  What is the probability that I get no emails in an interval of length 5 minutes?
+\item
+  What is the probability that I get more than 3 emails in an interval of length 10 minutes?
+\end{enumerate}
+
+\textbf{\emph{Solution}}
+
+Let, \(X\)=number of emails that I get in a given interval.
+
+Given, \(\lambda =0.2 \ \ min^{-1}\).
+
+\(X\) will follow \(Pois(\lambda t)\)
+
+\textbf{1.} In this case \(\mu=\lambda t=0.2*5=1\). \textbf{So}, \(P(X=0)=f(0)=e^{-\mu}=e^{-1}=0.3679\).
+
+\textbf{2.} In this case \(\mu=\lambda t=0.2*10=2\). \textbf{So},\(P(X>3)=1-P(X\le 3)=1-F(3)=1-0.857=0.143\). \[From **Table A3**\]
+
+\textbf{Approximation of Binomial Distribution to Poisson}
+
+When,
+
+\begin{itemize}
+\item
+  \(p \rightarrow0\) (\emph{Success rate is very low});
+\item
+  \(n\rightarrow \infty\) (\emph{Number of trials is very large});
+\end{itemize}
+
+Then \textbf{Binomial distribution} can be \emph{approximated} by \textbf{Poisson distribution}.
+
+\begin{itemize}
+\tightlist
+\item
+  Mathematically, \(Binom (x; n,p)\approx Pois(\lambda)\); where \(\lambda=np\).
+\end{itemize}
+
+\textbf{N.B: In practical situation} if \(n \ge 30\) and \(p\le 0.05\) ;hence \(q\ge 0.95\),then the approximation is close enough to use the Poisson distribution for binomial problems\citep{baron_probability_2019}.
+
+\textbf{Example 5.20:}\citep{walpole_probability_2017} In a manufacturing process where glass products are made, defects or bubbles occur, occasionally rendering the piece undesirable for marketing. It is known that, on average, 1 in every 1000 of these items produced has one or more bubbles. What is the probability that a random sample of 8000 will yield fewer than 7 items possessing bubbles?
+
+\textbf{\emph{Solution:}}
+
+Let,\(X=number\ \ of \ \ glasses\ \ possesing\ \ bubbles\)
+
+Given, \(Pr(buuble \ \ occurs)=p=1/1000=0.001\) which is less than \(0.05\), and \(n=8000\) which is greater than \(30\). So, the PMF of \(X\) can be approximated by Poisson distribution with
+
+\[\lambda =np=8000*0.001=8\] that is \(X\sim Pois (\lambda=8)\)
+
+According to question,
+
+\(P(X<7)=f(0)+f(1)+...+f(6)=F(6)=0.313\) (\emph{Ans.})
+
+{[}By using \textbf{Table A3}{]}
+
+\textbf{Exercise 5.87:}\citep{walpole_probability_2017} Imperfections in computer circuit boards and computer chips lend themselves to statistical treatment. For a particular type of board, the probability of a diode failure is 0.03 and the board contains 200 diodes.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  What is the mean number of failures among the diodes? (\textbf{\emph{Ans:}} \(\mu=np=200*0.03=6\))
+\item
+  What is the variance?(\textbf{\emph{Ans:}} \(\sigma^2=np(1-p)=200*0.03*(1-0.03)=5.82\))
+\item
+  The board will work if there are no defective diodes. What is the probability that a board will work? \textbf{\emph{Ans (c):}} The board will work if there are no defective diodes. So, P(The board will work)=\(P(X=0)=f(0)=e^{-\mu}=e^{-6}=0.0025\)
+\end{enumerate}
+
+\section{Continuous random variable}\label{continuous-random-variable}
+
+A fundamental difference separates discrete and continuous random variables in terms of how probabilities are computed. For a discrete random variable, the PMF \(f(x)\) provides the probability that the random variable assumes a particular value.
+
+With continuous random variables, the counterpart of the probability function is the \emph{probability density function (PDF)}, also denoted by \(f(x)\). The difference is that the probability density function does not directly provide probabilities. However, the area under the graph of \(f(x)\) corresponding to a given interval does provide the probability that the continuous random variable x assumes a value in that interval.
+
+\textbf{So when we compute probabilities for continuous random variables we are computing the probability that the random variable assumes any value in an interval.}
+
+\textbf{Definition}
+
+The function \(f(x)\) is said to be \emph{probability density function (PDF)} for the continuous random variable \(X\), defined over the set of real numbers, if
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(f(x)\ge0; all\ \ x\in R\)
+\item
+  \(\int_{-\infty}^{+\infty} f(x)dx=1\)
+\item
+  \(P(a< X < b)=\int_{a}^{b} f(x)dx\)
+\end{enumerate}
+
+\includegraphics[width=0.6\textwidth,height=\textheight]{PDF.png}
+
+\textbf{N.B:} \(P(X=a)=0\) as well as \(P(X=b)=0\). So, \(P(X\le a )\) is same as \(P(X<a)\).
+
+\textbf{CDF of} \(X\): By definition, CDF, \(F(x)=P(X\le x)= \int_{-\infty}^{x} f(x)dx\)
+
+Therefore, \(f(x)=\frac{d}{dx} F(x)\).
+
+\textbf{Expectation and variance of continuous r.v}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Mean}: \(E(X)=\int x.f(x)dx\)
+\item
+  \textbf{Variance}: \(\sigma^2=E(X-\mu)^2=\int(x-\mu)^2 f(x)=\int x^2 f(x)dx-\mu^2\)
+\end{itemize}
+
+\textbf{Example 3.11}\citep{walpole_probability_2017} Suppose that the error in the reaction temperature, in \(^0C\), for a controlled laboratory experiment is a continuous random variable X having the probability density function
+
+\[
+f(x)=\frac{x^2}{3}; -1<x<2.
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Verify that \(f(x)\) is a density function.
+\item
+  Find \(P(0< X \le 1)\).
+\end{enumerate}
+
+\textbf{Example 3.12}\citep{walpole_probability_2017} Find \(F(x)\), and use it to evaluate \(P(0 < X\le1)\).
+
+\textbf{H.W:} Find E(X) and Var(X) where,\(f(x)=\frac{x^2}{3}; -1<x<2\).
+
+\textbf{Exercise 3.29}\citep{walpole_probability_2017} An important factor in solid missile fuel is the particle size distribution. Significant problems occur if the particle sizes are too large. From production data in the past, it has been determined that the particle size (in micrometers) distribution is characterized by
+
+\[
+f(x)=3x^{-4}; x> 1
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Verify that this is a valid density function.
+\item
+  Evaluate \(F(x)\).
+\item
+  What is the probability that a random particle from the manufactured fuel exceeds 4 micrometers?
+\end{enumerate}
+
+\textbf{Exercise 3.69}\citep{walpole_probability_2017} The life span in hours of an electrical component is a random variable with cumulative distribution function \[
+F(x)=1-e^{-\frac{x}{50}}; x>0
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  Determine its probability density function (PDF).
+\item
+  Determine the probability that the life span of such a component will exceed 70 hours.
+\end{enumerate}
+
+\section{Some special continous random variables}\label{some-special-continous-random-variables}
+
+\subsection{Exponential r.v}\label{exponential-r.v}
+
+In many situations, such as when modeling waiting times, inter-arrival times, the lifespan of hardware, breakdown times, and the intervals between phone calls, the exponential distribution is utilized. The time (suppose \(T\)) between rare events in Poisson process with arrival rate \(\lambda\) (\emph{number of arrival per unit time}) can be treated as exponential r.v.
+
+\begin{itemize}
+\item
+  \textbf{PDF:} \(f(t)=\lambda e^{-\lambda t}; t> 0\)
+\item
+  \textbf{CDF:} \(F(t)=P(T\le t)=P(T< t)=1-e^{-\lambda t}; t> 0\)
+
+  Hence, \(P(T> t)=1-P(T\le t)=1-F(t)=e^{-\lambda t}\)
+\item
+  \textbf{Mean:} \(E(T)=\frac{1}{\lambda}\)
+\item
+  \textbf{Variance:} \(Var(T)=\frac{1}{\lambda^2}\)
+\end{itemize}
+
+\textbf{We write,} \(T\sim Exp(\lambda)\)
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+The quantity \(\lambda\) is a parameter of Exponential distribution, and its meaning is clear from \(E(T) = \frac{1}{\lambda}\) . If T is time, measured in minutes, then \(\lambda\) is a frequency, measured in \(min^{-1}\). For example, if arrivals occur every half a minute, on the average, then \(E(T) = 0.5\)min and \(\lambda=2\), saying that they occur with a frequency (arrival rate) of 2 arrivals per minute. This \(\lambda\) has the same meaning as the parameter of Poisson distribution\citep{baron_probability_2019}.
+
+\textbf{Example 4.5}\citep{baron_probability_2019} Jobs are sent to a printer at an average rate of 3 jobs per hour.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  What is the expected time between jobs?
+\item
+  What is the probability that the next job is sent within 5 minutes?
+\end{enumerate}
+
+\textbf{\emph{Solution:}} Given, number of jobs per hour, \(\lambda=3\ \ hr^{-1}\) per hour. Let, \(T\)=time elapsed between jobs (hour).
+
+So, \(T\sim Exp(\lambda)\)
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  \(E(T)=\frac{1}{\lambda} hr=\frac{1}{3} hr=20\ \ mins\);
+\item
+  Here, \(5 \ \ mins=\frac{5}{60} hr=\frac{1}{12} hr\) We know, \(F(t)=1-e^{-\lambda t}; t>0\)
+\end{enumerate}
+
+So, \(P(T<5 \ \ mins)=P(T<\frac{1}{12})=F(\frac{1}{12})=1-e^{-3*\frac{1}{12}}=0.22\)
+
+\textbf{Example 4.58} \citep{navidi_statistics_2011} A radioactive mass emits particles according to a Poisson process at a mean rate of 15 particles per minute. At some point, a clock is started. What is the probability that more than 5 seconds will elapse before the next emission? What is the mean waiting time until the next particle is emitted?
+
+\textbf{\emph{Solution}}
+
+Let, \(T=elapsed \ \ time \ \ before \ \ the \ \ next \ \ emission (in \ \ second)\)
+
+Given, \(\lambda=15 min^{-1}=\frac{15}{60} s^{-1}=0.25 s^{-1}\) and
+
+\(T\sim Exp(\lambda)\);
+
+\(P(T\le t)=F(t)=1-e^{-\lambda t}\)
+
+\emph{P(more than 5 seconds will elapse before the next emission)}=\(P(T>5)=e^{-\lambda * 5}=e^{-0.25*5}=0.2865\)
+
+\emph{Mean waiting time}, \(E(T)=\frac{1}{\lambda} s=\frac{1}{0.25}s=4s\)
+
+\textbf{Lack of Memory Property}
+
+If \(T \sim Exp(\lambda)\), and \(t\) and \(s\) are positive numbers, then
+
+\[P(T> t+s| T> s)=P(T> t)\]
+
+The probability that we must wait additional \(t\) units, given that we have already waited \(s\) units, is the same as the probability that we must wait \(t\) units from the start. The exponential distribution does not ``\emph{remember}'' how long we have been waiting.
+
+\begin{itemize}
+\item
+  In particular, if the lifetime of a component follows the exponential distribution, then the probability that a component that is \(s\) time units old will last an additional \(t\) time units is the same as the probability that a new component will last \(t\) time units.
+\item
+  In other words, a component whose lifetime follows an exponential distribution does not show any effects of age or wear\citep{navidi_statistics_2011}.
+\item
+  But if the failure of the component is a result of gradual or slow wear (as in mechanical wear), then the exponential does not apply and either the \textbf{gamma} or the \textbf{Weibull distribution} (see {[}\citet{walpole_probability_2017}, Section 6.10) may be more appropriate.
+\end{itemize}
+
+\textbf{Example 4.59}\citep{navidi_statistics_2011} The lifetime of a particular integrated circuit has an exponential distribution with mean 2 years. Find the probability that the circuit lasts longer than three years.
+
+\textbf{Example 4.60}\citep{navidi_statistics_2011} Refer to Example 4.59. Assume the circuit is now four years old and is still functioning. Find the probability that it functions for more than three additional years (Hints: Apply Lack of Memory Property).
+
+\textbf{Exercises for Section 4.7}\citep{navidi_statistics_2011}
+
+1.Let \(T \sim Exp(0.45)\). Find \(\mu_T, \sigma^2_T, P(T>3)\) and the median of \(T\).
+
+2.The time between requests to a web server is exponentially distributed with mean 0.5 seconds.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  What is the value of the parameter \(\lambda\)?
+\item
+  What is the median time between requests?
+\item
+  What is the standard deviation?
+\item
+  What is the 80th percentile?
+\item
+  Find the probability that more than one second elapses between requests.
+\item
+  If there have been no requests for the past two seconds, what is the probability that there more than one additional second will elapse before the next request?
+\end{enumerate}
+
+\textbf{\emph{Solution}}
+
+Let, \(T=time \ \ between \ \ requests \ \ in \ \ second\)
+
+If, \(T\sim Exp(\lambda)\); then it is given that
+
+\(E(T)=0.5 \ \ second\)
+
+\(\implies \frac{1}{\lambda}=0.5 \ \ second\)
+
+\textbf{a.} \(\therefore \lambda=2 s^{-1}\)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  If \(M\) is the median time between request then,
+\end{enumerate}
+
+\(P(T \le M)=0.5\)
+
+\(\implies F(M)=0.5\)
+
+\(\implies 1-e^{-\lambda *M}=0.5\)
+
+\(\implies e^{-\lambda *M}=0.5\)
+
+\(\implies {-\lambda *M}=ln(0.5)\)
+
+\(\implies M =\frac{ln(0.5)}{-\lambda}=\frac{ln(0.5)}{-2}=0.3466\approx0.35\)
+
+So, median time between request is \(0.35s\)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\item
+  Standard deviation of \(T\), \(\sigma_T=\frac{1}{\lambda}s=1/2 =0.5 s\)
+\item
+  Let, \(P_{80}\) denotes 80th percentile.
+\end{enumerate}
+
+So, solve the following equation for \(P_{80}\)
+
+\(P(T\le P_{80})=0.80)\)
+
+\(\implies F(P_{80})=0.80\)
+
+\(\implies P_{80}=\frac {ln(0.80)}{-\lambda}=0.11\)
+
+\(\therefore P_{80}=0.11 s\)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{4}
+\item
+  \(P(T>1)=e^{-\lambda *1}=0.1353\)
+\item
+  If there have been no requests for the past two seconds, the probability that there more than \textbf{\emph{one}} \textbf{additional second} will elapse before the next request is:
+\end{enumerate}
+
+\(P(T>1+2 /T>2)=P(T>1)=e^{-\lambda *1}=0.1353\) \[by using *Lack of memory property*\]
+
+8.A radioactive mass emits particles according to a Poisson process at a mean rate of 2 per second. Let T be the waiting time, in seconds, between emissions.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  What is the mean waiting time?
+\item
+  What is the median waiting time?
+\item
+  Find \(P(T > 2)\). Hint:\(P(T > 2)=e^{-\lambda *2}\)
+\item
+  Find \(P(T < 0.1)\).Hint:\(P(T < 0.1)=F(0.1)\)
+\item
+  Find \(P(0.3< T < 1.5)\). Hint:\(P(0.3< T < 1.5)=F(1.5)-F(0.3)\)
+\item
+  If 3 seconds have elapsed with no emission, what is the probability that there will be an emission within the next second? (Use Lack of Memory Property)
+\end{enumerate}
+
+\textbf{Solution of f.}
+
+Since T is exponentially distributed and hold lack of memory property, so it dose not matter what was happened in past 3 seconds. We have to just compute that \emph{there will be an emission (event will occur) within the next second}. So,
+
+\(P(T<1)=F(1)=1-e^{-\lambda*1}\) (\emph{do yourself})
+
+\subsection{Normal or Gaussian r.v}\label{normal-or-gaussian-r.v}
+
+The most important probability distribution for describing a continuous random variable is the \textbf{normal probability distribution}. The normal distribution has been used in a wide variety of practical applications in which the random variables are heights and weights of people, test scores, scientific measurements, amounts of rainfall, and other similar values.
+
+\textbf{Definition}
+
+A continuous random variable say \(X\) is said to be normally distributed if it has the following PDF:
+
+\[
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}; -\infty<x<+\infty
+\]
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth,height=\textheight]{Normal_curve.png}
+\caption{\textbf{Figure: Normal curve}}
+\end{figure}
+
+The normal curve has two parameters, \(\mu\) and \(\sigma\). They determine the location and shape of the normal distribution.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{We write,} \(X\sim N(\mu,\sigma)\)
+\item
+  \(E(X)=\mu\)
+\item
+  \(Var(X)=\sigma^2\)
+\end{itemize}
+
+\textbf{Standard normal distribution}
+
+If \(X\sim N(\mu,\sigma)\) then \(Z\sim N(0,1)\) ,where
+
+\[Z=\frac{(X-\mu)}{\sigma}\] The r.v \(Z\) is called \textbf{standard normal variable}.
+
+\begin{itemize}
+\item
+  \textbf{PDF of} \(Z\): \(f(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}};-\infty<z<+\infty\)
+\item
+  \textbf{CDF of} \(Z\): \(\Phi(z)=P(Z\le z)=\int_{-\infty}^{z}f(z)dz\)
+\end{itemize}
+
+\emph{Due to symmetry}, \(\Phi(-z)=1-\Phi(z)\)
+
+\begin{itemize}
+\item
+  \(E(Z)=0\)
+\item
+  \(Var(Z)=1\)
+\end{itemize}
+
+\textbf{Area under standard normal curve}
+
+For a given value of \(z\), \(\Phi(z)\) can be easily evaluated from z-table or calculator. \emph{For example},
+
+\begin{itemize}
+\item
+  \(P(Z\le 1.5)=\Phi(1.5)=0.9332\)
+\item
+  \(P(Z\ge 1.5)=1-P(<1.5)=1-\Phi(1.5)=1-0.9332=0.0668\)
+
+  \emph{Alternative:} \(P(Z\ge 1.5)=P(Z< -1.5)=\Phi(-1.5)=\) 0.0668
+\item
+  \(P(-1.8<Z<2.1)=\Phi(2.1)-\Phi(-1.8)=\) 0.9821-0.0359=0.9462
+\end{itemize}
+
+\textbf{Area under normal curve}
+
+Suppose, \(X \sim N(\mu, \sigma)\). Then
+
+\[
+P(X\le x)=P(\frac{X-\mu}{\sigma}\le \frac{x-\mu}{\sigma})=P(Z\le \frac{x-\mu}{\sigma})=\Phi(\frac{x-\mu}{\sigma})
+\]
+
+\emph{Due to symmetry},
+
+\[
+P(X\ge x)=\Phi(\frac{\mu-x}{\sigma})
+\]
+
+\textbf{Example:} Suppose, \(X \sim N(10, 2)\). Find \(P(X<8)\), \(P(X>14)\), \(P(10<X<12)\).
+
+\emph{Solution:}
+
+We know, \(P(X\le x)=\Phi(\frac{x-\mu}{\sigma})\) and \(P(X\ge x)=\Phi(\frac{\mu-x}{\sigma})\)
+
+So,
+
+\begin{itemize}
+\item
+  \(P(X<8)=\Phi(\frac{8-10}{2})=\Phi(-1)=\) 0.1587
+\item
+  \(P(X>14)=\Phi(\frac{10-14}{2})=\Phi(-2)=\) 0.0228
+\item
+  \(P(10<X<12)=\Phi(\frac{12-10}{2})-\Phi(\frac{10-10}{2})=\Phi(1)-\Phi(0)=0.3413\)
+\end{itemize}
+
+\textbf{Your turn:} Suppose, \(X \sim N(10, 2)\). Find P(X\textgreater14) and P(9\textless X\textless11).
+
+\textbf{Using the Normal Curve in Reverse}
+
+We know, \(P(Z\le z)=\Phi(z)\).
+
+Suppose, \(z\) is \emph{unknown} and it is given that, \(\Phi(z)=p\).
+
+Then, \(z=\Phi^{-1}(p)\)
+
+\textbf{Example:} Given, \(P(Z \le z)=0.9495\). Find the value of \(z\).
+
+\emph{Solution:}
+
+We know \(P(Z\le z)=\Phi(z)\).
+
+Given, \(\Phi(z)=0.9495\)
+
+\(\therefore z=\Phi^{-1}(p)=\Phi^{-1}(0.9495)=1.64\) \[From z-table, or calculator\]
+
+\textbf{Exercise 6.7}\citep{walpole_probability_2017} Given a standard normal distribution, find the value of \(k\) such that:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  P (Z \textgreater{} k) = 0.2946; (b) P (Z \textless k) = 0.0427; (c) P (-0.93 \textless{} Z \textless{} k) = 0.7235.
+\end{enumerate}
+
+\textbf{Relation with X}
+
+If, \(P(X\le x)=p\); then
+
+\(x=\mu+z*\sigma\); where, \(z=\Phi^{-1}(p)\)
+
+\textbf{Exercise 6.9}\citep{walpole_probability_2017} Given the normally distributed variable \(X\) with mean 18 and standard deviation 2.5, find:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  P (X \textless{} 15); (b) the value of k such that P (X \textless{} k) = 0.2236;
+\item
+  the value of k such that P (X \textgreater{} k) = 0.1814;
+\end{enumerate}
+
+\textbf{Finding percentiles:} Given,\(X\sim N(20,4)\). Compute 75th percentile (\(P_{75}\))
+
+\textbf{Solution} To find \(P_{75}\), we have to solve the following equation:
+
+\(P(X \le P_{75})=0.75\)
+
+\(\Rightarrow P_{75}=\mu+ z*\sigma\); where \(z=\Phi ^{-1}(0.75)\)=0.67
+
+\(\Rightarrow P_{75}=20+ (0.67)*4=22.68\)
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\textbf{H.W:} Given,\(X\sim N(18,2.5)\). Find \(50^{th}\) percentile (\(P_{50}\)) and \(90^{th}\) percentile (\(P_{90}\)) of \(X\).
+
+\textbf{Applications of the Normal Distribution}\citep{walpole_probability_2017}
+
+\textbf{Example 6.7}: A certain type of storage battery lasts, on average, 3.0 years with a standard deviation of 0.5 year. Assuming that battery life is normally distributed, find the probability that a given battery will last less than 2.3 years.
+
+\textbf{Example 6.8} : An electrical firm manufactures light bulbs that have a life, before burn-out, that is normally distributed with mean equal to 800 hours and a standard deviation of 40 hours. Find the probability that a bulb burns between 778 and 834 hours.
+
+\textbf{Example 6.9} : In an industrial process, the diameter of a ball bearing is an important measurement. The buyer sets specifications for the diameter to be \(3.0 \pm 0.01\) cm. The implication is that no part falling outside these specifications will be accepted. It is known that in the process the diameter of a ball bearing has a normal distribution with mean \(\mu = 3.0\) and standard deviation \(\sigma = 0.005\). On average, how many manufactured ball bearings will be scrapped?
+
+\textbf{Example 6.10} : Gauges are used to reject all components for which a certain dimension is not within the specification \(1.50 \pm d\). It is known that this measurement is normally distributed with a mean of 1.50 and a standard deviation of 0.2. Determine the value d such that the specifications ``cover'' 95\% of the measurements.
+
+\textbf{Solution:}
+
+Let, \(X=measurement \ \ of \ \ certain \ \ dimension\)
+
+Given, \(X\sim N(1.5,0.2)\)
+
+According to question,
+
+\(P(1.5-d<X<1.5+d)=0.95\)
+
+So, \(P(X<1.5-d)+P(X>1.5+d)=0.05\)
+
+\includegraphics{Walpole Example 6.10.png}
+
+So, \(P(X <1.5-d)=0.025\)
+
+\(\implies 1.5-d=\mu+z*\sigma\)
+
+\(\implies 1.5-d=1.5+(-1.96)*0.2\). {[}Since,\(z=\Phi^{-1}(0.025)=-1.96\){]}
+
+\(1.5-d=1.108\)
+
+\(\therefore d=0.392\)
+
+\textbf{Exercise 6.11} : A soft-drink machine is regulated so that it discharges an average of 200 milliliters per cup. If the amount of drink is normally distributed with a standard deviation equal to 15 milliliters,
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  what fraction of the cups will contain more than 224 milliliters?
+\item
+  what is the probability that a cup contains between 191 and 209 milliliters?
+\item
+  how many cups will probably overflow if 230-milliliter cups are used for the next 1000 drinks?
+\item
+  below what value do we get the smallest 25\% of the drinks?
+\end{enumerate}
+
+\textbf{Exercise 6.14} The finished inside diameter of a piston ring is normally distributed with a mean of 10 centimeters and a standard deviation of 0.03 centimeter.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  What proportion of rings will have inside diameters exceeding 10.075 centimeters?
+\item
+  What is the probability that a piston ring will have an inside diameter between 9.97 and 10.03 centimeters?
+\item
+  Below what value of inside diameter will 15\% of the piston rings fall?
+\end{enumerate}
+
+\textbf{Exercise 6.17} : The average life of a certain type of small motor is 10 years with a standard deviation of 2 years. The manufacturer replaces free all motors that fail while under guarantee. If she is willing to replace only 3\% of the motors that fail, how long a guarantee should be offered? Assume that the lifetime of a motor follows a normal distribution.
+
+  \bibliography{citations.bib}
+
+\end{document}

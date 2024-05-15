@@ -1,6 +1,6 @@
 ---
 title: "Statistics and Probability for Engineering"
-author: "Mohammad Saifuddin"
+author: "Mohammad Saifuddin, Assistant Professor,Department of Mathematic and Statistics, BUBT"
 date: "`r Sys.Date()`"
 output: bookdown::gitbook
 documentcalss: book
