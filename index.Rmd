@@ -1,0 +1,22 @@
+---
+title: "An awesome book"
+author: "Mohammad Saifuddin"
+date: "`r Sys.Date()`"
+output: bookdown::gitbook
+documentcalss: scrbook
+site: bookdown::bookdown_site
+bibliography: citations.bib
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "This book introduces the concept of statistics and probability engineering students "
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Preface {.unnumbered}
+
+This study manual is specially written for the honors students of engineering discipline like CSE, EEE and Textile.
