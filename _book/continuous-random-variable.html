@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Continuous random variable | Statistics and Probability for Engineering</title>
+  <meta name="description" content="This book introduces the concept of statistics and probability engineering students" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Continuous random variable | Statistics and Probability for Engineering" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book introduces the concept of statistics and probability engineering students" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Continuous random variable | Statistics and Probability for Engineering" />
+  
+  <meta name="twitter:description" content="This book introduces the concept of statistics and probability engineering students" />
+  
+
+<meta name="author" content="Mohammad Saifuddin" />
+
+
+<meta name="date" content="2024-05-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="some-special-discrete-random-variables.html"/>
+<link rel="next" href="some-special-continous-random-variables.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html"><i class="fa fa-check"></i><b>1</b> Introduction to statistics</a></li>
+<li class="chapter" data-level="2" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>2</b> Probability</a></li>
+<li class="chapter" data-level="3" data-path="random-variable.html"><a href="random-variable.html"><i class="fa fa-check"></i><b>3</b> Random variable</a></li>
+<li class="chapter" data-level="4" data-path="some-special-discrete-random-variables.html"><a href="some-special-discrete-random-variables.html"><i class="fa fa-check"></i><b>4</b> Some special discrete random variables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="some-special-discrete-random-variables.html"><a href="some-special-discrete-random-variables.html#bernoulli-r.v"><i class="fa fa-check"></i><b>4.1</b> Bernoulli r.v</a></li>
+<li class="chapter" data-level="4.2" data-path="some-special-discrete-random-variables.html"><a href="some-special-discrete-random-variables.html#binomial-r.v"><i class="fa fa-check"></i><b>4.2</b> Binomial r.v</a></li>
+<li class="chapter" data-level="4.3" data-path="some-special-discrete-random-variables.html"><a href="some-special-discrete-random-variables.html#poisson-r.v"><i class="fa fa-check"></i><b>4.3</b> Poisson r.v</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="continuous-random-variable.html"><a href="continuous-random-variable.html"><i class="fa fa-check"></i><b>5</b> Continuous random variable</a></li>
+<li class="chapter" data-level="6" data-path="some-special-continous-random-variables.html"><a href="some-special-continous-random-variables.html"><i class="fa fa-check"></i><b>6</b> Some special continous random variables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="some-special-continous-random-variables.html"><a href="some-special-continous-random-variables.html#exponential-r.v"><i class="fa fa-check"></i><b>6.1</b> Exponential r.v</a></li>
+<li class="chapter" data-level="6.2" data-path="some-special-continous-random-variables.html"><a href="some-special-continous-random-variables.html#normal-or-gaussian-r.v"><i class="fa fa-check"></i><b>6.2</b> Normal or Gaussian r.v</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics and Probability for Engineering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="continuous-random-variable" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Continuous random variable<a href="continuous-random-variable.html#continuous-random-variable" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A fundamental difference separates discrete and continuous random variables in terms of how probabilities are computed. For a discrete random variable, the PMF <span class="math inline">\(f(x)\)</span> provides the probability that the random variable assumes a particular value.</p>
+<p>With continuous random variables, the counterpart of the probability function is the <em>probability density function (PDF)</em>, also denoted by <span class="math inline">\(f(x)\)</span>. The difference is that the probability density function does not directly provide probabilities. However, the area under the graph of <span class="math inline">\(f(x)\)</span> corresponding to a given interval does provide the probability that the continuous random variable x assumes a value in that interval.</p>
+<p><strong>So when we compute probabilities for continuous random variables we are computing the probability that the random variable assumes any value in an interval.</strong></p>
+<p><strong>Definition</strong></p>
+<p>The function <span class="math inline">\(f(x)\)</span> is said to be <em>probability density function (PDF)</em> for the continuous random variable <span class="math inline">\(X\)</span>, defined over the set of real numbers, if</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(f(x)\ge0; all\ \ x\in R\)</span></li>
+<li><span class="math inline">\(\int_{-\infty}^{+\infty} f(x)dx=1\)</span></li>
+<li><span class="math inline">\(P(a&lt; X &lt; b)=\int_{a}^{b} f(x)dx\)</span></li>
+</ol>
+<p><img src="PDF.png" style="width:60.0%" /></p>
+<p><strong>N.B:</strong> <span class="math inline">\(P(X=a)=0\)</span> as well as <span class="math inline">\(P(X=b)=0\)</span>. So, <span class="math inline">\(P(X\le a )\)</span> is same as <span class="math inline">\(P(X&lt;a)\)</span>.</p>
+<p><strong>CDF of</strong> <span class="math inline">\(X\)</span>: By definition, CDF, <span class="math inline">\(F(x)=P(X\le x)= \int_{-\infty}^{x} f(x)dx\)</span></p>
+<p>Therefore, <span class="math inline">\(f(x)=\frac{d}{dx} F(x)\)</span>.</p>
+<p><strong>Expectation and variance of continuous r.v</strong></p>
+<ul>
+<li><strong>Mean</strong>: <span class="math inline">\(E(X)=\int x.f(x)dx\)</span></li>
+<li><strong>Variance</strong>: <span class="math inline">\(\sigma^2=E(X-\mu)^2=\int(x-\mu)^2 f(x)=\int x^2 f(x)dx-\mu^2\)</span></li>
+</ul>
+<p><strong>Example 3.11</strong><span class="citation">(<a href="#ref-walpole_probability_2017">Walpole et al. 2017</a>)</span> Suppose that the error in the reaction temperature, in <span class="math inline">\(^0C\)</span>, for a controlled laboratory experiment is a continuous random variable X having the probability density function</p>
+<p><span class="math display">\[
+f(x)=\frac{x^2}{3}; -1&lt;x&lt;2.
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Verify that <span class="math inline">\(f(x)\)</span> is a density function.</li>
+<li>Find <span class="math inline">\(P(0&lt; X \le 1)\)</span>.</li>
+</ol>
+<p><strong>Example 3.12</strong><span class="citation">(<a href="#ref-walpole_probability_2017">Walpole et al. 2017</a>)</span> Find <span class="math inline">\(F(x)\)</span>, and use it to evaluate <span class="math inline">\(P(0 &lt; X\le1)\)</span>.</p>
+<p><strong>H.W:</strong> Find E(X) and Var(X) where,<span class="math inline">\(f(x)=\frac{x^2}{3}; -1&lt;x&lt;2\)</span>.</p>
+<p><strong>Exercise 3.29</strong><span class="citation">(<a href="#ref-walpole_probability_2017">Walpole et al. 2017</a>)</span> An important factor in solid missile fuel is the particle size distribution. Significant problems occur if the particle sizes are too large. From production data in the past, it has been determined that the particle size (in micrometers) distribution is characterized by</p>
+<p><span class="math display">\[
+f(x)=3x^{-4}; x&gt; 1
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Verify that this is a valid density function.</li>
+<li>Evaluate <span class="math inline">\(F(x)\)</span>.</li>
+<li>What is the probability that a random particle from the manufactured fuel exceeds 4 micrometers?</li>
+</ol>
+<p><strong>Exercise 3.69</strong><span class="citation">(<a href="#ref-walpole_probability_2017">Walpole et al. 2017</a>)</span> The life span in hours of an electrical component is a random variable with cumulative distribution function <span class="math display">\[
+F(x)=1-e^{-\frac{x}{50}}; x&gt;0
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Determine its probability density function (PDF).</p></li>
+<li><p>Determine the probability that the life span of such a component will exceed 70 hours.</p></li>
+</ol>
+
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-walpole_probability_2017" class="csl-entry">
+Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, and Keying Ye, eds. 2017. <em>Probability &amp; Statistics for Engineers &amp; Scientists: <span>MyStatLab</span> Update</em>. Ninth edition. Boston: Pearson.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="some-special-discrete-random-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="some-special-continous-random-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/Saifuddin86/Statistics_and_Probability_eBook5Continuous_rv_5.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

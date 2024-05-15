@@ -1,9 +1,9 @@
 ---
-title: "An awesome book"
+title: "Statistics and Probability for Engineering"
 author: "Mohammad Saifuddin"
 date: "`r Sys.Date()`"
 output: bookdown::gitbook
-documentcalss: scrbook
+documentcalss: book
 site: bookdown::bookdown_site
 bibliography: citations.bib
 biblio-style: apalike

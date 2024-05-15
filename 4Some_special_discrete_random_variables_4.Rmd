@@ -100,7 +100,7 @@ $P(X \ge 3)=1-P(X< 3)=1-P(X \le 2)=1-F(2)=1-0.3174=0.6826$
 
 **Finding Binomial probability using Binomial Table**
 
-In the end of any Statistics book there are some **Probability Distribution Table**. We can use these table to compute the required probability for *specific values of the parameters* of certain probability distribution. Here I share the 1st page of **Binomial distribution table** from @baron_probability_2019.
+In the end of any Statistics book there are some **Probability Distribution Table**. We can use these table to compute the required probability for *specific values of the parameters* of certain probability distribution. Here I share the 1st page of **Binomial distribution table** [@baron_probability_2019].
 
 ![](Binomial distribution_1st page.png)
 
@@ -119,7 +119,7 @@ In the end of any Statistics book there are some **Probability Distribution Tabl
 *(iii)* $P(X \ge 3)=1-P(X< 3)=1-F(2)=1-0.3174=0.6826$
 
 
-**Exercise [@walpole_probability_2017]**
+**Exercise**[@walpole_probability_2017]
 
 **5.9** In testing a certain kind of truck tire over rugged terrain, it is found that 25% of the trucks fail to complete the test run without a blowout. Of the next 15 trucks tested, find the probability that: (a) from 3 to 6 have blowouts; (b) fewer than 4 have blowouts; (c) more than 5 have blowouts.
 
@@ -158,13 +158,13 @@ Now,
 
 **5.25** Suppose that for a very large shipment of integrated-circuit chips, the probability of failure for any one chip is 0.10. Assuming that the assumptions underlying the binomial distributions are met, find the probability that at most 3 chips fail in a random sample of 20.
 
-**Exercise [@montgomery_applied_2014]**
+**Exercise**[@montgomery_applied_2014]
 
 **3-93** Let $X$ be a binomial random variable with $p = 0.1$ . and $n = 10$. Calculate the following probabilities from the binomial probability mass function and from the binomial table in Appendix A and compare results. (a) $P(X\le 2)$ (b) P(X\>8) (c) P(X = 4) (d) $P(5 \le X \le7)$
 
 **3-115** The probability that a visitor to a Web site provides contact data for additional information is 0.01. Assume that 1000 visitors to the site behave independently. Determine the following probabilities: (a) No visitor provides contact data. (b) Exactly 10 visitors provide contact data. (c) More than 3 visitors provide contact data
 
-**Exercise [@baron_probability_2019]**
+**Exercise**[@baron_probability_2019]
 
 **3.21.** A lab network consisting of 20 computers was attacked by a computer virus. This virus enters each computer with probability 0.4, independently of other computers. Find the probability that it entered at least 10 computers.
 
@@ -251,7 +251,7 @@ So, $P(X=4)=f(4)=\frac{e^{-3}(3)^4}{4!}$=`r round(dpois(4,3),3)`.
 
 **Finding Poisson probability using Table**
 
-We can use Poisson distribution table to compute Poisson probabilities. Here I share the 1st page of **Poisson distribution table** from @baron_probability_2019.
+We can use Poisson distribution table to compute Poisson probabilities. Here I share the 1st page of **Poisson distribution table** [@baron_probability_2019].
 
 ![](Poisson%20Table.png)
 
@@ -321,7 +321,7 @@ According to question,
 
 $P(X<7)=f(0)+f(1)+...+f(6)=F(6)=0.313$ (*Ans.*)
 
-\[By using **Table A3** \]
+[By using **Table A3**]
 
 **Exercise 5.87:**[@walpole_probability_2017] Imperfections in computer circuit boards and computer chips lend themselves to statistical treatment. For a particular type of board, the probability of a diode failure is 0.03 and the board contains 200 diodes.
 

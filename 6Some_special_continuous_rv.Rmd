@@ -92,9 +92,9 @@ The probability that we must wait additional $t$ units, given that we have alrea
 
 -   In particular, if the lifetime of a component follows the exponential distribution, then the probability that a component that is $s$ time units old will last an additional $t$ time units is the same as the probability that a new component will last $t$ time units.
 
--   In other words, a component whose lifetime follows an exponential distribution does not show any effects of age or wear [@navidi_statistics_2011].
+-   In other words, a component whose lifetime follows an exponential distribution does not show any effects of age or wear[@navidi_statistics_2011].
 
--   But if the failure of the component is a result of gradual or slow wear (as in mechanical wear), then the exponential does not apply and either the **gamma** or the **Weibull distribution** (see @walpole_probability_2017, Section 6.10) may be more appropriate.
+-   But if the failure of the component is a result of gradual or slow wear (as in mechanical wear), then the exponential does not apply and either the **gamma** or the **Weibull distribution** (see [@walpole_probability_2017, Section 6.10) may be more appropriate.
 
 **Example 4.59**[@navidi_statistics_2011] The lifetime of a particular integrated circuit has an exponential distribution with mean 2 years. Find the probability that the circuit lasts longer than three years.
 
@@ -159,18 +159,20 @@ e.  $P(T>1)=e^{-\lambda *1}=0.1353$
 
 f.  If there have been no requests for the past two seconds, the probability that there more than ***one*** **additional second** will elapse before the next request is:
 
-$P(T>1+2 /T>2)=P(T>1)=e^{-\lambda *1}=0.1353$ \[by using *Lack of memory property*\]
+$P(T>1+2 /T>2)=P(T>1)=e^{-\lambda *1}=0.1353$ $$by using *Lack of memory property*$$
 
 8.A radioactive mass emits particles according to a Poisson process at a mean rate of 2 per second. Let T be the waiting time, in seconds, between emissions.
 
 a.  What is the mean waiting time?
 b.  What is the median waiting time?
-c.  Find $P(T > 2)$. \[Hint:$P(T > 2)=e^{-\lambda *2}$ \]
-d.  Find $P(T < 0.1)$.\[Hint:$P(T < 0.1)=F(0.1)$ \]
-e.  Find $P(0.3< T < 1.5)$. \[Hint:$P(0.3< T < 1.5)=F(1.5)-F(0.3)$ \]
+c.  Find $P(T > 2)$. Hint:$P(T > 2)=e^{-\lambda *2}$ 
+d.  Find $P(T < 0.1)$.Hint:$P(T < 0.1)=F(0.1)$
+e.  Find $P(0.3< T < 1.5)$. Hint:$P(0.3< T < 1.5)=F(1.5)-F(0.3)$
 f.  If 3 seconds have elapsed with no emission, what is the probability that there will be an emission within the next second? (Use Lack of Memory Property)
 
-**Solution of f.** Since T is exponentially distributed and hold lack of memory property, so it dose not matter what was happened in past 3 seconds. We have to just compute that *there will be an emission (event will occur) within the next second*. So,
+**Solution of f.** 
+
+Since T is exponentially distributed and hold lack of memory property, so it dose not matter what was happened in past 3 seconds. We have to just compute that *there will be an emission (event will occur) within the next second*. So,
 
 $P(T<1)=F(1)=1-e^{-\lambda*1}$ (*do yourself*)
 
@@ -214,7 +216,7 @@ $$Z=\frac{(X-\mu)}{\sigma}$$ The r.v $Z$ is called **standard normal variable**.
 
 For a given value of $z$, $\Phi(z)$ can be easily evaluated from z-table or calculator. *For example*,
 
--   $P(Z\le 1.5)=\Phi(1.5)=$`r round(pnorm(1.5),4)`
+-   $P(Z\le 1.5)=\Phi(1.5)=0.9332$
 
 -   $P(Z\ge 1.5)=1-P(<1.5)=1-\Phi(1.5)=1-0.9332=0.0668$
 
@@ -236,7 +238,7 @@ $$
 P(X\ge x)=\Phi(\frac{\mu-x}{\sigma})
 $$
 
-**Example:** Suppose, $X \sim N(10, 2)$. Find P(X\<8), P(X\>14), P(10\<X\<12).
+**Example:** Suppose, $X \sim N(10, 2)$. Find $P(X<8)$, $P(X>14)$, $P(10<X<12)$.
 
 *Solution:*
 
@@ -268,7 +270,7 @@ We know $P(Z\le z)=\Phi(z)$.
 
 Given, $\Phi(z)=0.9495$
 
-$\therefore z=\Phi^{-1}(p)=\Phi^{-1}(0.9495)=1.64$ \[From z-table, or calculator\]
+$\therefore z=\Phi^{-1}(p)=\Phi^{-1}(0.9495)=1.64$ $$From z-table, or calculator$$
 
 **Exercise 6.7**[@walpole_probability_2017] Given a standard normal distribution, find the value of $k$ such that:
 
@@ -306,9 +308,10 @@ text(qnorm(0.75,15,4),.02,expression(paste(P(X<=P[75]),"=0.75")))
 text(qnorm(0.75,20,4),0,expression(paste(P[75],"=22.68")))
 ```
 
+
 **H.W:** Given,$X\sim N(18,2.5)$. Find $50^{th}$ percentile ($P_{50}$) and $90^{th}$ percentile ($P_{90}$) of $X$.
 
-**Applications of the Normal Distribution[@walpole_probability_2017]**
+**Applications of the Normal Distribution**[@walpole_probability_2017]
 
 **Example 6.7**: A certain type of storage battery lasts, on average, 3.0 years with a standard deviation of 0.5 year. Assuming that battery life is normally distributed, find the probability that a given battery will last less than 2.3 years.
 
@@ -336,7 +339,7 @@ So, $P(X <1.5-d)=0.025$
 
 $\implies 1.5-d=\mu+z*\sigma$
 
-$\implies 1.5-d=1.5+(-1.96)*0.2$ \[Since, $z=\Phi^{-1}(0.025)=-1.96$\]
+$\implies 1.5-d=1.5+(-1.96)*0.2$ $$Since, $z=\Phi^{-1}(0.025)=-1.96$$$
 
 $1.5-d=1.108$
 
@@ -356,7 +359,3 @@ $\therefore d=0.392$
 (c) Below what value of inside diameter will 15% of the piston rings fall?
 
 **Exercise 6.17** : The average life of a certain type of small motor is 10 years with a standard deviation of 2 years. The manufacturer replaces free all motors that fail while under guarantee. If she is willing to replace only 3% of the motors that fail, how long a guarantee should be offered? Assume that the lifetime of a motor follows a normal distribution.
-
-*And so on...*
-
-

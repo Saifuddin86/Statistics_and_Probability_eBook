@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Some special discrete random variables | Statistics and Probability for Engineering</title>
+  <meta name="description" content="This book introduces the concept of statistics and probability engineering students" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Some special discrete random variables | Statistics and Probability for Engineering" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book introduces the concept of statistics and probability engineering students" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Some special discrete random variables | Statistics and Probability for Engineering" />
+  
+  <meta name="twitter:description" content="This book introduces the concept of statistics and probability engineering students" />
+  
+
+<meta name="author" content="Mohammad Saifuddin" />
+
+
+<meta name="date" content="2024-05-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="random-variable.html"/>
+<link rel="next" href="continuous-random-variable.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html"><i class="fa fa-check"></i><b>1</b> Introduction to statistics</a></li>
+<li class="chapter" data-level="2" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>2</b> Probability</a></li>
+<li class="chapter" data-level="3" data-path="random-variable.html"><a href="random-variable.html"><i class="fa fa-check"></i><b>3</b> Random variable</a></li>
+<li class="chapter" data-level="4" data-path="some-special-discrete-random-variables.html"><a href="some-special-discrete-random-variables.html"><i class="fa fa-check"></i><b>4</b> Some special discrete random variables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="some-special-discrete-random-variables.html"><a href="some-special-discrete-random-variables.html#bernoulli-r.v"><i class="fa fa-check"></i><b>4.1</b> Bernoulli r.v</a></li>
+<li class="chapter" data-level="4.2" data-path="some-special-discrete-random-variables.html"><a href="some-special-discrete-random-variables.html#binomial-r.v"><i class="fa fa-check"></i><b>4.2</b> Binomial r.v</a></li>
+<li class="chapter" data-level="4.3" data-path="some-special-discrete-random-variables.html"><a href="some-special-discrete-random-variables.html#poisson-r.v"><i class="fa fa-check"></i><b>4.3</b> Poisson r.v</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="continuous-random-variable.html"><a href="continuous-random-variable.html"><i class="fa fa-check"></i><b>5</b> Continuous random variable</a></li>
+<li class="chapter" data-level="6" data-path="some-special-continous-random-variables.html"><a href="some-special-continous-random-variables.html"><i class="fa fa-check"></i><b>6</b> Some special continous random variables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="some-special-continous-random-variables.html"><a href="some-special-continous-random-variables.html#exponential-r.v"><i class="fa fa-check"></i><b>6.1</b> Exponential r.v</a></li>
+<li class="chapter" data-level="6.2" data-path="some-special-continous-random-variables.html"><a href="some-special-continous-random-variables.html#normal-or-gaussian-r.v"><i class="fa fa-check"></i><b>6.2</b> Normal or Gaussian r.v</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics and Probability for Engineering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="some-special-discrete-random-variables" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Some special discrete random variables<a href="some-special-discrete-random-variables.html#some-special-discrete-random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bernoulli-r.v" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Bernoulli r.v<a href="some-special-discrete-random-variables.html#bernoulli-r.v" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><strong>PMF</strong>: <span class="math inline">\(P(X=x)=f(x)=p^x(1-p)^{1-x}; \ \ x=0,1\)</span></li>
+<li><strong>Mean</strong>: <span class="math inline">\(\mu=E(X)=p\)</span></li>
+<li><strong>Variance</strong>: <span class="math inline">\(\sigma^2 =E(X-\mu)^2=E(X^2)-\mu^2=p(1-p)\)</span></li>
+</ul>
+</div>
+<div id="binomial-r.v" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Binomial r.v<a href="some-special-discrete-random-variables.html#binomial-r.v" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Consider an experiment of tossing a biased coin 3(number of trials, n) times.</li>
+<li>Tosses are <em>independent</em>, each toss has only <strong>TWO</strong> Outcomes-<em>Head (Success)</em> and <em>Tail (Failure)</em></li>
+</ul>
+<p><strong>This type of trial is called the <em>Bernoulli Trial</em></strong></p>
+<ul>
+<li>Suppose, <span class="math inline">\(P(H)=p\)</span> and remain constant in each toss, consequently, <span class="math inline">\(P(T)=1-p=q\)</span> (let).</li>
+</ul>
+<p><strong>Suppose</strong>, <span class="math inline">\(X=\# \ \ of\ \ head\ \ (successes)\ \  in\ \ 3\ \ tosses\)</span></p>
+<p>Now, what is the probability that, we will have <strong>exactly 2 heads (success) in 3 tosses?</strong></p>
+<p><strong>That is,</strong> <span class="math inline">\(P(X=2)=?\)</span></p>
+<p>Now, this can happen in the following ways:</p>
+<p><span class="math display">\[P(X=2)=P(HHT)+P(HTH)+P(THH)\]</span> <span class="math display">\[=P(H)P(H)P(T)+P(H)P(T)P(H)+P(T)P(H)P(H)\]</span> [<em>Since tosses are independent</em>]</p>
+<p><span class="math display">\[=p.p.q+p.q.p+q.p.p\]</span> <span class="math display">\[=p^2 q+p^2 q+p^2 q=3p^2 q\]</span> <span class="math display">\[\therefore P(X=2)=\binom{3}{2}p^2q^{3-2}\]</span> If, <span class="math inline">\(p=0.6\)</span> is given, then we can easily compute <span class="math inline">\(P(X=2)=f(2)\)</span>. Now, if we repeat the toss 10 times <span class="math inline">\((n=10)\)</span>, with <span class="math inline">\(P(H)=p\)</span>, what is the value of <span class="math inline">\(P(X=3)=f(3)\)</span>?</p>
+<p><strong>So</strong>, for <span class="math inline">\(n\)</span> independent Bernoulli trials with a constant probability of success, <span class="math inline">\(p\)</span>, the probability mass function (PMF) of the random variable, <span class="math inline">\(X\)</span>=# of successes in <span class="math inline">\(n\)</span> trials is given below:</p>
+<ul>
+<li><p><strong>PMF</strong>:<span class="math inline">\(P(X=x)=f(x)=\binom{n}{x} p^x (1-p)^x ;x=0,1,2,...,n\)</span></p></li>
+<li><p><strong>CDF</strong>: <span class="math inline">\(P(X\le x)=F(x)=f(0)+f(1)+...+f(x)\)</span></p></li>
+<li><p><strong>Mean</strong>:<span class="math inline">\(\mu=E(X)=np\)</span></p></li>
+<li><p><strong>Variance</strong>:<span class="math inline">\(\sigma^2 =np(1-p)\)</span></p></li>
+<li><p><strong>We write</strong> <span class="math inline">\(X\sim Binom(n,p)\)</span></p></li>
+<li><p><span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> are said to be the <em>parameters</em> of the Binomial distribution.</p></li>
+</ul>
+<p><strong>N.B:</strong> <span class="math inline">\(f(x)=F(x)-F(x-1)\)</span> i.e <span class="math inline">\(f(3)=F(3)-F(2)\)</span></p>
+<p><strong>Probability plot of binomial r.v for different values of</strong> <span class="math inline">\(p\)</span> and shape characteristics</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><strong>Finding Binomial probability manually</strong></p>
+<p>Suppose, <span class="math inline">\(X\sim Binom(n,p)\)</span>; where <span class="math inline">\(n=5\)</span> and <span class="math inline">\(p=0.6\)</span>. Find, <em>(i)</em> <span class="math inline">\(P(X=2)\)</span> <em>(ii)</em> <span class="math inline">\(P(X \le 2)\)</span> <em>(iii)</em> <span class="math inline">\(P(X\ge3)\)</span>.</p>
+<p><strong><em>Solution:</em></strong></p>
+<p><strong>PMF of</strong> <span class="math inline">\(X\)</span>: <span class="math inline">\(P(X=x)=f(x)=\binom{5}{x} 0.6^x (0.4)^{5-x} \ \ ;x=0,1,2,...,5\)</span></p>
+<p><em>(i)</em> <span class="math inline">\(P(X=2)=f(2)=\binom{5}{2} 0.6^2 (0.4)^{5-2}=0.2304\)</span></p>
+<p><em>(ii)</em> <span class="math inline">\(P(X \le 2)=F(2)=f(0)+f(1)+f(2)=0.0102+0.0768+0.2304=0.3174\)</span></p>
+<p><em>(iii)</em> <span class="math inline">\(P(X \ge 3)=f(3)+f(4)+f(5)=0.6826\)</span></p>
+<p><strong><em>Alternative:(iii)</em></strong></p>
+<p><span class="math inline">\(P(X \ge 3)=1-P(X&lt; 3)=1-P(X \le 2)=1-F(2)=1-0.3174=0.6826\)</span></p>
+<p><strong>Finding Binomial probability using Binomial Table</strong></p>
+<p>In the end of any Statistics book there are some <strong>Probability Distribution Table</strong>. We can use these table to compute the required probability for <em>specific values of the parameters</em> of certain probability distribution. Here I share the 1st page of <strong>Binomial distribution table</strong> <span class="citation">(<a href="#ref-baron_probability_2019">Baron 2019</a>)</span>.</p>
+<p><img src="Binomial%20distribution_1st%20page.png" /></p>
+<p><strong>Suppose</strong>, <span class="math inline">\(X\sim Binom(n,p)\)</span>; where <span class="math inline">\(n=5\)</span> and <span class="math inline">\(p=0.6\)</span>. Find, <em>(i)</em> <span class="math inline">\(P(X=2)\)</span> <em>(ii)</em> <span class="math inline">\(P(X \le 2)\)</span> <em>(iii)</em> <span class="math inline">\(P(X \ge 3)\)</span> using <strong>Table</strong>.</p>
+<p><strong><em>Solution:</em></strong></p>
+<p><em>(i)</em> <span class="math inline">\(P(X=2)=f(2)=F(2)-F(1)=0.3174-0.0870=0.2304\)</span>.</p>
+<p><em>(ii)</em> <span class="math inline">\(P(X\le 2=F(2)=0.3174\)</span></p>
+<p><em>(iii)</em> <span class="math inline">\(P(X \ge 3)=1-P(X&lt; 3)=1-F(2)=1-0.3174=0.6826\)</span></p>
+<p><strong>Exercise</strong><span class="citation">(<a href="#ref-walpole_probability_2017">Walpole et al. 2017</a>)</span></p>
+<p><strong>5.9</strong> In testing a certain kind of truck tire over rugged terrain, it is found that 25% of the trucks fail to complete the test run without a blowout. Of the next 15 trucks tested, find the probability that: (a) from 3 to 6 have blowouts; (b) fewer than 4 have blowouts; (c) more than 5 have blowouts.</p>
+<p><em><strong>Solution</strong>:</em></p>
+<p>Let, <em>X= number of trucks that have blowouts</em></p>
+<p>Given, <span class="math inline">\(n=15; \ \ p=Pr(blowout)=0.25; \ \ q=1-p=0.75\)</span>. Hence, <span class="math inline">\(X\sim Binom(n=15, p=0.25)\)</span>, that is:</p>
+<p><span class="math display">\[
+P(X=x)=f(x)=\binom{15}{x}(0.25)^x (0.75)^{15-x}; x=0,1,2,...,15.
+\]</span></p>
+<p>Now,</p>
+<p><strong>(a)</strong> <span class="math inline">\(P(3\le X\le 6)=f(3)+f(4)+f(5)+f(6)\)</span>=0.225+0.225+0.165+0.092=0.707.</p>
+<p><strong><em>Alternative:</em></strong> <span class="math inline">\(P(3\le X\le 6)=F(6)-F(2)=0.943-0.236=0.707\)</span> <span class="math display">\[from **Table**\]</span></p>
+<p><strong>(b)</strong> <span class="math inline">\(P(X&lt;4)=f(0)+f(1)+f(2)+f(3)\)</span>=0.013+0.067+0.156+0.225=0.461.</p>
+<p><strong><em>Alternative:</em></strong> <span class="math inline">\(P(X&lt; 4)=F(3)=0.461\)</span> <span class="math display">\[from **Table A2**\]</span></p>
+<p><strong>(c)</strong> <span class="math inline">\(P(X &gt; 5)=1-P(X \le 5)=1-F(5)\)</span>=0.148</p>
+<p><strong>5.12</strong> A traffic control engineer reports that 75% of the vehicles passing through a checkpoint are from within the state. What is the probability that fewer than 4 of the next 9 vehicles are from out of state?</p>
+<p><strong>5.16</strong> Suppose that airplane engines operate independently and fail with probability equal to 0.4. Assuming that a plane makes a safe flight if at least one-half of its engines run, determine whether a 4-engine plane or a 2-engine plane has the higher probability for a successful flight.</p>
+<p><strong>5.25</strong> Suppose that for a very large shipment of integrated-circuit chips, the probability of failure for any one chip is 0.10. Assuming that the assumptions underlying the binomial distributions are met, find the probability that at most 3 chips fail in a random sample of 20.</p>
+<p><strong>Exercise</strong><span class="citation">(<a href="#ref-montgomery_applied_2014">Montgomery and Runger 2014</a>)</span></p>
+<p><strong>3-93</strong> Let <span class="math inline">\(X\)</span> be a binomial random variable with <span class="math inline">\(p = 0.1\)</span> . and <span class="math inline">\(n = 10\)</span>. Calculate the following probabilities from the binomial probability mass function and from the binomial table in Appendix A and compare results. (a) <span class="math inline">\(P(X\le 2)\)</span> (b) P(X&gt;8) (c) P(X = 4) (d) <span class="math inline">\(P(5 \le X \le7)\)</span></p>
+<p><strong>3-115</strong> The probability that a visitor to a Web site provides contact data for additional information is 0.01. Assume that 1000 visitors to the site behave independently. Determine the following probabilities: (a) No visitor provides contact data. (b) Exactly 10 visitors provide contact data. (c) More than 3 visitors provide contact data</p>
+<p><strong>Exercise</strong><span class="citation">(<a href="#ref-baron_probability_2019">Baron 2019</a>)</span></p>
+<p><strong>3.21.</strong> A lab network consisting of 20 computers was attacked by a computer virus. This virus enters each computer with probability 0.4, independently of other computers. Find the probability that it entered at least 10 computers.</p>
+<p><strong>3.22.</strong> Five percent of computer parts produced by a certain supplier are defective. What is the probability that a sample of 16 parts contains more than 3 defective ones?</p>
+<p><em>And so on….</em></p>
+</div>
+<div id="poisson-r.v" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Poisson r.v<a href="some-special-discrete-random-variables.html#poisson-r.v" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The number of events occur randomly in an interval or in a region usually follows Poisson distribution. A famous French mathematician <em>SimB4eon-Denis Poisson</em> (1781–1840) first introduced this distribution.</p>
+<p><strong>Example</strong></p>
+<p>The Poisson distribution may be useful to model variables like:</p>
+<ul>
+<li>The <em>no. of calls</em> arrive at a customer care in <em>15 minites</em></li>
+<li>The <em>no. of arrivals</em> at a car wash in <em>one hour</em></li>
+<li>The <em>no. of repairs</em> needed in <em>10 miles</em> of highway</li>
+<li>The <em>no. of leaks</em> in <em>100 miles</em> of pipeline etc.</li>
+</ul>
+<p>Usually Poisson distribution is used to evaluate probability of “<em>Rare</em>” event.</p>
+<p>The probability mass function of the Poisson random variable <span class="math inline">\(X\)</span>, representing the <em>number of outcomes</em> occurring in a given time interval denoted by <span class="math inline">\(t\)</span>, is:</p>
+<ul>
+<li><strong>PMF</strong>: <span class="math inline">\(P(X=x)=f(x)=\frac{e^{-\lambda t}(\lambda t)^x}{x!}; \ \ x=0,1,2,...,\infty.\)</span></li>
+</ul>
+<p>Here, <span class="math inline">\(\lambda\)</span> is called <em>arrival rate</em> or <em>average number of occurrences</em> in long-run. And only <em>parameter</em> of Poisson distribution.</p>
+<ul>
+<li><p><strong>Mean</strong>: <span class="math inline">\(\mu=E(X)=\lambda t\)</span></p></li>
+<li><p><strong>Variance</strong>: <span class="math inline">\(\sigma^2 =\lambda t\)</span></p></li>
+<li><p><strong>We write:</strong> <span class="math inline">\(X\sim Pois(\lambda t)\)</span></p></li>
+</ul>
+<p><strong>N.B</strong>: The mean and variance of Poisson random random variable are <em>identical</em>. This is the <em>unique property</em> of Poisson r.v.</p>
+<p><strong>Probability of plot of poisson r.v for different values of</strong> <span class="math inline">\(\lambda\)</span> (for a fixed interval <span class="math inline">\(t=1\)</span>)</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>We can see that, for small <span class="math inline">\(\lambda\)</span> the distribution of Poisson r.v is positively skewed and as the value of <span class="math inline">\(\lambda\)</span> increases the distribution tends to symmetry.</p>
+<p><strong>Finding Poisson probability</strong></p>
+<p>Consider a discrete r.v say <span class="math inline">\(X\sim Pois(\lambda t)\)</span>. Suppose, <span class="math inline">\(\lambda =1.5\)</span> and <span class="math inline">\(t=2\)</span>. Find, (i) P(X=4) (ii)<span class="math inline">\(P(X \le 2)\)</span> (iii) <span class="math inline">\(P(X\ge3)\)</span>.</p>
+<p><strong><em>Solution</em></strong>:</p>
+<p><strong>PMF</strong> of <span class="math inline">\(X\)</span>: <span class="math inline">\(P(X=x)=f(x)=\frac{e^{-\lambda t}(\lambda t)^x}{x!}; x=0,1,...,\infty.\)</span></p>
+<p><strong>(i)</strong> For <span class="math inline">\(t=2\)</span> , <span class="math inline">\(\mu=\lambda t=1.5*2=3\)</span>.</p>
+<p>So, <span class="math inline">\(P(X=4)=f(4)=\frac{e^{-3}(3)^4}{4!}\)</span>=0.168.</p>
+<p><strong>(ii)</strong> <span class="math inline">\(P(X\le2)=\sum_{x=0}^{2}f(x)=\sum_{x=0}^{2}\frac{e^{-3}(3)^x}{x!}=e^{-3}[\frac{3^0}{0!}+\frac{3^1}{1!}+\frac{3^2}{2!}]\)</span>=0.423.</p>
+<p><strong>(iii)</strong> <span class="math inline">\(P(X \ge 3)=1-P(X&lt; 3)=1-P(X\le 2)=1-0.423=0.577\)</span></p>
+<p><strong>Finding Poisson probability using Table</strong></p>
+<p>We can use Poisson distribution table to compute Poisson probabilities. Here I share the 1st page of <strong>Poisson distribution table</strong> <span class="citation">(<a href="#ref-baron_probability_2019">Baron 2019</a>)</span>.</p>
+<p><img src="Poisson%20Table.png" /></p>
+<p><strong>Consider</strong> a discrete r.v say <span class="math inline">\(X\sim Pois(\lambda t)\)</span>. Suppose, <span class="math inline">\(\lambda =1.5\)</span> and <span class="math inline">\(t=2\)</span>. <strong>Find</strong>, (i) <span class="math inline">\(P(X \le 2)\)</span> (ii)P(X=4)</p>
+<p><strong><em>Solution by using Table</em></strong>:</p>
+<p>For <span class="math inline">\(t=2\)</span> , <span class="math inline">\(\mu=\lambda t=1.5*2=3\)</span>.</p>
+<p><strong>(i)</strong> <span class="math inline">\(P(X \le 2)=F(2)=0.423\)</span></p>
+<p><span class="math display">\[For x=2 and $\mu \ \ or \ \lambda =3;$ corresponding probability in **Table A3** is 0.423\]</span></p>
+<p><strong>(ii)</strong> <span class="math inline">\(P(X=4)=f(4)=F(4)-F(3)=0.815-0.647=0.168\)</span></p>
+<p><strong>Example 5.17:</strong><span class="citation">(<a href="#ref-walpole_probability_2017">Walpole et al. 2017</a>)</span> During a laboratory experiment, the average number of radioactive particles passing through a counter in 1 millisecond is 4. What is the probability that 6 particles enter the counter in a given millisecond?</p>
+<p><strong>Example 5.18:</strong><span class="citation">(<a href="#ref-walpole_probability_2017">Walpole et al. 2017</a>)</span> Ten is the average number of oil tankers arriving each day at a certain port. The facilities at the port can handle at most 15 tankers per day. What is the probability that on a given day tankers have to be turned away?</p>
+<p><strong>Example 3.8:</strong><span class="citation">(<a href="#ref-pishro-nik_introduction_2014">Pishro-Nik 2014</a>)</span> The number of emails that I get in a weekday can be modeled by a Poisson distribution with an average of 0.2 emails per minute.</p>
+<ol style="list-style-type: decimal">
+<li><p>What is the probability that I get no emails in an interval of length 5 minutes?</p></li>
+<li><p>What is the probability that I get more than 3 emails in an interval of length 10 minutes?</p></li>
+</ol>
+<p><strong><em>Solution</em></strong></p>
+<p>Let, <span class="math inline">\(X\)</span>=number of emails that I get in a given interval.</p>
+<p>Given, <span class="math inline">\(\lambda =0.2 \ \ min^{-1}\)</span>.</p>
+<p><span class="math inline">\(X\)</span> will follow <span class="math inline">\(Pois(\lambda t)\)</span></p>
+<p><strong>1.</strong> In this case <span class="math inline">\(\mu=\lambda t=0.2*5=1\)</span>. <strong>So</strong>, <span class="math inline">\(P(X=0)=f(0)=e^{-\mu}=e^{-1}=0.3679\)</span>.</p>
+<p><strong>2.</strong> In this case <span class="math inline">\(\mu=\lambda t=0.2*10=2\)</span>. <strong>So</strong>,<span class="math inline">\(P(X&gt;3)=1-P(X\le 3)=1-F(3)=1-0.857=0.143\)</span>. <span class="math display">\[From **Table A3**\]</span></p>
+<p><strong>Approximation of Binomial Distribution to Poisson</strong></p>
+<p>When,</p>
+<ul>
+<li><p><span class="math inline">\(p \rightarrow0\)</span> (<em>Success rate is very low</em>);</p></li>
+<li><p><span class="math inline">\(n\rightarrow \infty\)</span> (<em>Number of trials is very large</em>);</p></li>
+</ul>
+<p>Then <strong>Binomial distribution</strong> can be <em>approximated</em> by <strong>Poisson distribution</strong>.</p>
+<ul>
+<li>Mathematically, <span class="math inline">\(Binom (x; n,p)\approx Pois(\lambda)\)</span>; where <span class="math inline">\(\lambda=np\)</span>.</li>
+</ul>
+<p><strong>N.B: In practical situation</strong> if <span class="math inline">\(n \ge 30\)</span> and <span class="math inline">\(p\le 0.05\)</span> ;hence <span class="math inline">\(q\ge 0.95\)</span>,then the approximation is close enough to use the Poisson distribution for binomial problems<span class="citation">(<a href="#ref-baron_probability_2019">Baron 2019</a>)</span>.</p>
+<p><strong>Example 5.20:</strong><span class="citation">(<a href="#ref-walpole_probability_2017">Walpole et al. 2017</a>)</span> In a manufacturing process where glass products are made, defects or bubbles occur, occasionally rendering the piece undesirable for marketing. It is known that, on average, 1 in every 1000 of these items produced has one or more bubbles. What is the probability that a random sample of 8000 will yield fewer than 7 items possessing bubbles?</p>
+<p><strong><em>Solution:</em></strong></p>
+<p>Let,<span class="math inline">\(X=number\ \ of \ \ glasses\ \ possesing\ \ bubbles\)</span></p>
+<p>Given, <span class="math inline">\(Pr(buuble \ \ occurs)=p=1/1000=0.001\)</span> which is less than <span class="math inline">\(0.05\)</span>, and <span class="math inline">\(n=8000\)</span> which is greater than <span class="math inline">\(30\)</span>. So, the PMF of <span class="math inline">\(X\)</span> can be approximated by Poisson distribution with</p>
+<p><span class="math display">\[\lambda =np=8000*0.001=8\]</span> that is <span class="math inline">\(X\sim Pois (\lambda=8)\)</span></p>
+<p>According to question,</p>
+<p><span class="math inline">\(P(X&lt;7)=f(0)+f(1)+...+f(6)=F(6)=0.313\)</span> (<em>Ans.</em>)</p>
+<p>[By using <strong>Table A3</strong>]</p>
+<p><strong>Exercise 5.87:</strong><span class="citation">(<a href="#ref-walpole_probability_2017">Walpole et al. 2017</a>)</span> Imperfections in computer circuit boards and computer chips lend themselves to statistical treatment. For a particular type of board, the probability of a diode failure is 0.03 and the board contains 200 diodes.</p>
+<ol style="list-style-type: lower-alpha">
+<li>What is the mean number of failures among the diodes? (<strong><em>Ans:</em></strong> <span class="math inline">\(\mu=np=200*0.03=6\)</span>)</li>
+<li>What is the variance?(<strong><em>Ans:</em></strong> <span class="math inline">\(\sigma^2=np(1-p)=200*0.03*(1-0.03)=5.82\)</span>)</li>
+<li>The board will work if there are no defective diodes. What is the probability that a board will work? <strong><em>Ans (c):</em></strong> The board will work if there are no defective diodes. So, P(The board will work)=<span class="math inline">\(P(X=0)=f(0)=e^{-\mu}=e^{-6}=0.0025\)</span></li>
+</ol>
+
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-baron_probability_2019" class="csl-entry">
+Baron, Michael. 2019. <em>Probability and Statistics for Computer Scientists</em>. Third edition. Boca Raton: CRC Press, Taylor &amp; Francis Group.
+</div>
+<div id="ref-montgomery_applied_2014" class="csl-entry">
+Montgomery, Douglas C., and George C. Runger. 2014. <em>Applied Statistics and Probability for Engineers</em>. Sixth edition. Hoboken, NJ: John Wiley; Sons, Inc.
+</div>
+<div id="ref-pishro-nik_introduction_2014" class="csl-entry">
+Pishro-Nik, Hossein. 2014. <em>Introduction to Probability, Statistics, and Random Processes</em>. Blue Bell, PA: Kappa Research, LLC.
+</div>
+<div id="ref-walpole_probability_2017" class="csl-entry">
+Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, and Keying Ye, eds. 2017. <em>Probability &amp; Statistics for Engineers &amp; Scientists: <span>MyStatLab</span> Update</em>. Ninth edition. Boston: Pearson.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="random-variable.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="continuous-random-variable.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/Saifuddin86/Statistics_and_Probability_eBook4Some_special_discrete_random_variables_4.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

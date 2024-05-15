@@ -46,7 +46,9 @@ $$
 
 **H.W:** Find E(X) and Var(X) where,$f(x)=\frac{x^2}{3}; -1<x<2$.
 
-**Exercise 3.29**[@walpole_probability_2017] An important factor in solid missile fuel is the particle size distribution. Significant problems occur if the particle sizes are too large. From production data in the past, it has been determined that the particle size (in micrometers) distribution is characterized by $$
+**Exercise 3.29**[@walpole_probability_2017] An important factor in solid missile fuel is the particle size distribution. Significant problems occur if the particle sizes are too large. From production data in the past, it has been determined that the particle size (in micrometers) distribution is characterized by 
+
+$$
 f(x)=3x^{-4}; x> 1
 $$
 
@@ -61,5 +63,3 @@ $$
 (a) Determine its probability density function (PDF).
 
 (b) Determine the probability that the life span of such a component will exceed 70 hours.
-
-

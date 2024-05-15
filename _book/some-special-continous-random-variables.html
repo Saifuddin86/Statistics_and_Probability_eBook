@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Some special continous random variables | Statistics and Probability for Engineering</title>
+  <meta name="description" content="This book introduces the concept of statistics and probability engineering students" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Some special continous random variables | Statistics and Probability for Engineering" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book introduces the concept of statistics and probability engineering students" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Some special continous random variables | Statistics and Probability for Engineering" />
+  
+  <meta name="twitter:description" content="This book introduces the concept of statistics and probability engineering students" />
+  
+
+<meta name="author" content="Mohammad Saifuddin" />
+
+
+<meta name="date" content="2024-05-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="continuous-random-variable.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html"><i class="fa fa-check"></i><b>1</b> Introduction to statistics</a></li>
+<li class="chapter" data-level="2" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>2</b> Probability</a></li>
+<li class="chapter" data-level="3" data-path="random-variable.html"><a href="random-variable.html"><i class="fa fa-check"></i><b>3</b> Random variable</a></li>
+<li class="chapter" data-level="4" data-path="some-special-discrete-random-variables.html"><a href="some-special-discrete-random-variables.html"><i class="fa fa-check"></i><b>4</b> Some special discrete random variables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="some-special-discrete-random-variables.html"><a href="some-special-discrete-random-variables.html#bernoulli-r.v"><i class="fa fa-check"></i><b>4.1</b> Bernoulli r.v</a></li>
+<li class="chapter" data-level="4.2" data-path="some-special-discrete-random-variables.html"><a href="some-special-discrete-random-variables.html#binomial-r.v"><i class="fa fa-check"></i><b>4.2</b> Binomial r.v</a></li>
+<li class="chapter" data-level="4.3" data-path="some-special-discrete-random-variables.html"><a href="some-special-discrete-random-variables.html#poisson-r.v"><i class="fa fa-check"></i><b>4.3</b> Poisson r.v</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="continuous-random-variable.html"><a href="continuous-random-variable.html"><i class="fa fa-check"></i><b>5</b> Continuous random variable</a></li>
+<li class="chapter" data-level="6" data-path="some-special-continous-random-variables.html"><a href="some-special-continous-random-variables.html"><i class="fa fa-check"></i><b>6</b> Some special continous random variables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="some-special-continous-random-variables.html"><a href="some-special-continous-random-variables.html#exponential-r.v"><i class="fa fa-check"></i><b>6.1</b> Exponential r.v</a></li>
+<li class="chapter" data-level="6.2" data-path="some-special-continous-random-variables.html"><a href="some-special-continous-random-variables.html#normal-or-gaussian-r.v"><i class="fa fa-check"></i><b>6.2</b> Normal or Gaussian r.v</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics and Probability for Engineering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="some-special-continous-random-variables" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Some special continous random variables<a href="some-special-continous-random-variables.html#some-special-continous-random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="exponential-r.v" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Exponential r.v<a href="some-special-continous-random-variables.html#exponential-r.v" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In many situations, such as when modeling waiting times, inter-arrival times, the lifespan of hardware, breakdown times, and the intervals between phone calls, the exponential distribution is utilized. The time (suppose <span class="math inline">\(T\)</span>) between rare events in Poisson process with arrival rate <span class="math inline">\(\lambda\)</span> (<em>number of arrival per unit time</em>) can be treated as exponential r.v.</p>
+<ul>
+<li><p><strong>PDF:</strong> <span class="math inline">\(f(t)=\lambda e^{-\lambda t}; t&gt; 0\)</span></p></li>
+<li><p><strong>CDF:</strong> <span class="math inline">\(F(t)=P(T\le t)=P(T&lt; t)=1-e^{-\lambda t}; t&gt; 0\)</span></p>
+<p>Hence, <span class="math inline">\(P(T&gt; t)=1-P(T\le t)=1-F(t)=e^{-\lambda t}\)</span></p></li>
+<li><p><strong>Mean:</strong> <span class="math inline">\(E(T)=\frac{1}{\lambda}\)</span></p></li>
+<li><p><strong>Variance:</strong> <span class="math inline">\(Var(T)=\frac{1}{\lambda^2}\)</span></p></li>
+</ul>
+<p><strong>We write,</strong> <span class="math inline">\(T\sim Exp(\lambda)\)</span></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-1-1.png" width="576" /></p>
+<p>The quantity <span class="math inline">\(\lambda\)</span> is a parameter of Exponential distribution, and its meaning is clear from <span class="math inline">\(E(T) = \frac{1}{\lambda}\)</span> . If T is time, measured in minutes, then <span class="math inline">\(\lambda\)</span> is a frequency, measured in <span class="math inline">\(min^{-1}\)</span>. For example, if arrivals occur every half a minute, on the average, then <span class="math inline">\(E(T) = 0.5\)</span>min and <span class="math inline">\(\lambda=2\)</span>, saying that they occur with a frequency (arrival rate) of 2 arrivals per minute. This <span class="math inline">\(\lambda\)</span> has the same meaning as the parameter of Poisson distribution<span class="citation">(<a href="#ref-baron_probability_2019">Baron 2019</a>)</span>.</p>
+<p><strong>Example 4.5</strong><span class="citation">(<a href="#ref-baron_probability_2019">Baron 2019</a>)</span> Jobs are sent to a printer at an average rate of 3 jobs per hour.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>What is the expected time between jobs?</p></li>
+<li><p>What is the probability that the next job is sent within 5 minutes?</p></li>
+</ol>
+<p><strong><em>Solution:</em></strong> Given, number of jobs per hour, <span class="math inline">\(\lambda=3\ \ hr^{-1}\)</span> per hour. Let, <span class="math inline">\(T\)</span>=time elapsed between jobs (hour).</p>
+<p>So, <span class="math inline">\(T\sim Exp(\lambda)\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(E(T)=\frac{1}{\lambda} hr=\frac{1}{3} hr=20\ \ mins\)</span>;</li>
+<li>Here, <span class="math inline">\(5 \ \ mins=\frac{5}{60} hr=\frac{1}{12} hr\)</span> We know, <span class="math inline">\(F(t)=1-e^{-\lambda t}; t&gt;0\)</span></li>
+</ol>
+<p>So, <span class="math inline">\(P(T&lt;5 \ \ mins)=P(T&lt;\frac{1}{12})=F(\frac{1}{12})=1-e^{-3*\frac{1}{12}}=0.22\)</span></p>
+<p><strong>Example 4.58</strong> <span class="citation">(<a href="#ref-navidi_statistics_2011">Navidi 2011</a>)</span> A radioactive mass emits particles according to a Poisson process at a mean rate of 15 particles per minute. At some point, a clock is started. What is the probability that more than 5 seconds will elapse before the next emission? What is the mean waiting time until the next particle is emitted?</p>
+<p><strong><em>Solution</em></strong></p>
+<p>Let, <span class="math inline">\(T=elapsed \ \ time \ \ before \ \ the \ \ next \ \ emission (in \ \ second)\)</span></p>
+<p>Given, <span class="math inline">\(\lambda=15 min^{-1}=\frac{15}{60} s^{-1}=0.25 s^{-1}\)</span> and</p>
+<p><span class="math inline">\(T\sim Exp(\lambda)\)</span>;</p>
+<p><span class="math inline">\(P(T\le t)=F(t)=1-e^{-\lambda t}\)</span></p>
+<p><em>P(more than 5 seconds will elapse before the next emission)</em>=<span class="math inline">\(P(T&gt;5)=e^{-\lambda * 5}=e^{-0.25*5}=0.2865\)</span></p>
+<p><em>Mean waiting time</em>, <span class="math inline">\(E(T)=\frac{1}{\lambda} s=\frac{1}{0.25}s=4s\)</span></p>
+<p><strong>Lack of Memory Property</strong></p>
+<p>If <span class="math inline">\(T \sim Exp(\lambda)\)</span>, and <span class="math inline">\(t\)</span> and <span class="math inline">\(s\)</span> are positive numbers, then</p>
+<p><span class="math display">\[P(T&gt; t+s| T&gt; s)=P(T&gt; t)\]</span></p>
+<p>The probability that we must wait additional <span class="math inline">\(t\)</span> units, given that we have already waited <span class="math inline">\(s\)</span> units, is the same as the probability that we must wait <span class="math inline">\(t\)</span> units from the start. The exponential distribution does not “<em>remember</em>” how long we have been waiting.</p>
+<ul>
+<li><p>In particular, if the lifetime of a component follows the exponential distribution, then the probability that a component that is <span class="math inline">\(s\)</span> time units old will last an additional <span class="math inline">\(t\)</span> time units is the same as the probability that a new component will last <span class="math inline">\(t\)</span> time units.</p></li>
+<li><p>In other words, a component whose lifetime follows an exponential distribution does not show any effects of age or wear<span class="citation">(<a href="#ref-navidi_statistics_2011">Navidi 2011</a>)</span>.</p></li>
+<li><p>But if the failure of the component is a result of gradual or slow wear (as in mechanical wear), then the exponential does not apply and either the <strong>gamma</strong> or the <strong>Weibull distribution</strong> (see [<span class="citation">Walpole et al. (<a href="#ref-walpole_probability_2017">2017</a>)</span>, Section 6.10) may be more appropriate.</p></li>
+</ul>
+<p><strong>Example 4.59</strong><span class="citation">(<a href="#ref-navidi_statistics_2011">Navidi 2011</a>)</span> The lifetime of a particular integrated circuit has an exponential distribution with mean 2 years. Find the probability that the circuit lasts longer than three years.</p>
+<p><strong>Example 4.60</strong><span class="citation">(<a href="#ref-navidi_statistics_2011">Navidi 2011</a>)</span> Refer to Example 4.59. Assume the circuit is now four years old and is still functioning. Find the probability that it functions for more than three additional years (Hints: Apply Lack of Memory Property).</p>
+<p><strong>Exercises for Section 4.7</strong><span class="citation">(<a href="#ref-navidi_statistics_2011">Navidi 2011</a>)</span></p>
+<p>1.Let <span class="math inline">\(T \sim Exp(0.45)\)</span>. Find <span class="math inline">\(\mu_T, \sigma^2_T, P(T&gt;3)\)</span> and the median of <span class="math inline">\(T\)</span>.</p>
+<p>2.The time between requests to a web server is exponentially distributed with mean 0.5 seconds.</p>
+<ol style="list-style-type: lower-alpha">
+<li>What is the value of the parameter <span class="math inline">\(\lambda\)</span>?</li>
+<li>What is the median time between requests?</li>
+<li>What is the standard deviation?</li>
+<li>What is the 80th percentile?</li>
+<li>Find the probability that more than one second elapses between requests.</li>
+<li>If there have been no requests for the past two seconds, what is the probability that there more than one additional second will elapse before the next request?</li>
+</ol>
+<p><strong><em>Solution</em></strong></p>
+<p>Let, <span class="math inline">\(T=time \ \ between \ \ requests \ \ in \ \ second\)</span></p>
+<p>If, <span class="math inline">\(T\sim Exp(\lambda)\)</span>; then it is given that</p>
+<p><span class="math inline">\(E(T)=0.5 \ \ second\)</span></p>
+<p><span class="math inline">\(\implies \frac{1}{\lambda}=0.5 \ \ second\)</span></p>
+<p><strong>a.</strong> <span class="math inline">\(\therefore \lambda=2 s^{-1}\)</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>If <span class="math inline">\(M\)</span> is the median time between request then,</li>
+</ol>
+<p><span class="math inline">\(P(T \le M)=0.5\)</span></p>
+<p><span class="math inline">\(\implies F(M)=0.5\)</span></p>
+<p><span class="math inline">\(\implies 1-e^{-\lambda *M}=0.5\)</span></p>
+<p><span class="math inline">\(\implies e^{-\lambda *M}=0.5\)</span></p>
+<p><span class="math inline">\(\implies {-\lambda *M}=ln(0.5)\)</span></p>
+<p><span class="math inline">\(\implies M =\frac{ln(0.5)}{-\lambda}=\frac{ln(0.5)}{-2}=0.3466\approx0.35\)</span></p>
+<p>So, median time between request is <span class="math inline">\(0.35s\)</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><p>Standard deviation of <span class="math inline">\(T\)</span>, <span class="math inline">\(\sigma_T=\frac{1}{\lambda}s=1/2 =0.5 s\)</span></p></li>
+<li><p>Let, <span class="math inline">\(P_{80}\)</span> denotes 80th percentile.</p></li>
+</ol>
+<p>So, solve the following equation for <span class="math inline">\(P_{80}\)</span></p>
+<p><span class="math inline">\(P(T\le P_{80})=0.80)\)</span></p>
+<p><span class="math inline">\(\implies F(P_{80})=0.80\)</span></p>
+<p><span class="math inline">\(\implies P_{80}=\frac {ln(0.80)}{-\lambda}=0.11\)</span></p>
+<p><span class="math inline">\(\therefore P_{80}=0.11 s\)</span></p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(P(T&gt;1)=e^{-\lambda *1}=0.1353\)</span></p></li>
+<li><p>If there have been no requests for the past two seconds, the probability that there more than <strong><em>one</em></strong> <strong>additional second</strong> will elapse before the next request is:</p></li>
+</ol>
+<p><span class="math inline">\(P(T&gt;1+2 /T&gt;2)=P(T&gt;1)=e^{-\lambda *1}=0.1353\)</span> <span class="math display">\[by using *Lack of memory property*\]</span></p>
+<p>8.A radioactive mass emits particles according to a Poisson process at a mean rate of 2 per second. Let T be the waiting time, in seconds, between emissions.</p>
+<ol style="list-style-type: lower-alpha">
+<li>What is the mean waiting time?</li>
+<li>What is the median waiting time?</li>
+<li>Find <span class="math inline">\(P(T &gt; 2)\)</span>. Hint:<span class="math inline">\(P(T &gt; 2)=e^{-\lambda *2}\)</span></li>
+<li>Find <span class="math inline">\(P(T &lt; 0.1)\)</span>.Hint:<span class="math inline">\(P(T &lt; 0.1)=F(0.1)\)</span></li>
+<li>Find <span class="math inline">\(P(0.3&lt; T &lt; 1.5)\)</span>. Hint:<span class="math inline">\(P(0.3&lt; T &lt; 1.5)=F(1.5)-F(0.3)\)</span></li>
+<li>If 3 seconds have elapsed with no emission, what is the probability that there will be an emission within the next second? (Use Lack of Memory Property)</li>
+</ol>
+<p><strong>Solution of f.</strong></p>
+<p>Since T is exponentially distributed and hold lack of memory property, so it dose not matter what was happened in past 3 seconds. We have to just compute that <em>there will be an emission (event will occur) within the next second</em>. So,</p>
+<p><span class="math inline">\(P(T&lt;1)=F(1)=1-e^{-\lambda*1}\)</span> (<em>do yourself</em>)</p>
+</div>
+<div id="normal-or-gaussian-r.v" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Normal or Gaussian r.v<a href="some-special-continous-random-variables.html#normal-or-gaussian-r.v" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The most important probability distribution for describing a continuous random variable is the <strong>normal probability distribution</strong>. The normal distribution has been used in a wide variety of practical applications in which the random variables are heights and weights of people, test scores, scientific measurements, amounts of rainfall, and other similar values.</p>
+<p><strong>Definition</strong></p>
+<p>A continuous random variable say <span class="math inline">\(X\)</span> is said to be normally distributed if it has the following PDF:</p>
+<p><span class="math display">\[
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}; -\infty&lt;x&lt;+\infty
+\]</span></p>
+<div class="float">
+<img src="Normal_curve.png" style="width:50.0%" fig-align="left" alt="Figure: Normal curve" />
+<div class="figcaption"><strong>Figure: Normal curve</strong></div>
+</div>
+<p>The normal curve has two parameters, <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>. They determine the location and shape of the normal distribution.</p>
+<ul>
+<li><strong>We write,</strong> <span class="math inline">\(X\sim N(\mu,\sigma)\)</span></li>
+<li><span class="math inline">\(E(X)=\mu\)</span></li>
+<li><span class="math inline">\(Var(X)=\sigma^2\)</span></li>
+</ul>
+<p><strong>Standard normal distribution</strong></p>
+<p>If <span class="math inline">\(X\sim N(\mu,\sigma)\)</span> then <span class="math inline">\(Z\sim N(0,1)\)</span> ,where</p>
+<p><span class="math display">\[Z=\frac{(X-\mu)}{\sigma}\]</span> The r.v <span class="math inline">\(Z\)</span> is called <strong>standard normal variable</strong>.</p>
+<ul>
+<li><p><strong>PDF of</strong> <span class="math inline">\(Z\)</span>: <span class="math inline">\(f(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}};-\infty&lt;z&lt;+\infty\)</span></p></li>
+<li><p><strong>CDF of</strong> <span class="math inline">\(Z\)</span>: <span class="math inline">\(\Phi(z)=P(Z\le z)=\int_{-\infty}^{z}f(z)dz\)</span></p></li>
+</ul>
+<p><em>Due to symmetry</em>, <span class="math inline">\(\Phi(-z)=1-\Phi(z)\)</span></p>
+<ul>
+<li><p><span class="math inline">\(E(Z)=0\)</span></p></li>
+<li><p><span class="math inline">\(Var(Z)=1\)</span></p></li>
+</ul>
+<p><strong>Area under standard normal curve</strong></p>
+<p>For a given value of <span class="math inline">\(z\)</span>, <span class="math inline">\(\Phi(z)\)</span> can be easily evaluated from z-table or calculator. <em>For example</em>,</p>
+<ul>
+<li><p><span class="math inline">\(P(Z\le 1.5)=\Phi(1.5)=0.9332\)</span></p></li>
+<li><p><span class="math inline">\(P(Z\ge 1.5)=1-P(&lt;1.5)=1-\Phi(1.5)=1-0.9332=0.0668\)</span></p>
+<p><em>Alternative:</em> <span class="math inline">\(P(Z\ge 1.5)=P(Z&lt; -1.5)=\Phi(-1.5)=\)</span> 0.0668</p></li>
+<li><p><span class="math inline">\(P(-1.8&lt;Z&lt;2.1)=\Phi(2.1)-\Phi(-1.8)=\)</span> 0.9821-0.0359=0.9462</p></li>
+</ul>
+<p><strong>Area under normal curve</strong></p>
+<p>Suppose, <span class="math inline">\(X \sim N(\mu, \sigma)\)</span>. Then</p>
+<p><span class="math display">\[
+P(X\le x)=P(\frac{X-\mu}{\sigma}\le \frac{x-\mu}{\sigma})=P(Z\le \frac{x-\mu}{\sigma})=\Phi(\frac{x-\mu}{\sigma})
+\]</span></p>
+<p><em>Due to symmetry</em>,</p>
+<p><span class="math display">\[
+P(X\ge x)=\Phi(\frac{\mu-x}{\sigma})
+\]</span></p>
+<p><strong>Example:</strong> Suppose, <span class="math inline">\(X \sim N(10, 2)\)</span>. Find <span class="math inline">\(P(X&lt;8)\)</span>, <span class="math inline">\(P(X&gt;14)\)</span>, <span class="math inline">\(P(10&lt;X&lt;12)\)</span>.</p>
+<p><em>Solution:</em></p>
+<p>We know, <span class="math inline">\(P(X\le x)=\Phi(\frac{x-\mu}{\sigma})\)</span> and <span class="math inline">\(P(X\ge x)=\Phi(\frac{\mu-x}{\sigma})\)</span></p>
+<p>So,</p>
+<ul>
+<li><p><span class="math inline">\(P(X&lt;8)=\Phi(\frac{8-10}{2})=\Phi(-1)=\)</span> 0.1587</p></li>
+<li><p><span class="math inline">\(P(X&gt;14)=\Phi(\frac{10-14}{2})=\Phi(-2)=\)</span> 0.0228</p></li>
+<li><p><span class="math inline">\(P(10&lt;X&lt;12)=\Phi(\frac{12-10}{2})-\Phi(\frac{10-10}{2})=\Phi(1)-\Phi(0)=0.3413\)</span></p></li>
+</ul>
+<p><strong>Your turn:</strong> Suppose, <span class="math inline">\(X \sim N(10, 2)\)</span>. Find P(X&gt;14) and P(9&lt;X&lt;11).</p>
+<p><strong>Using the Normal Curve in Reverse</strong></p>
+<p>We know, <span class="math inline">\(P(Z\le z)=\Phi(z)\)</span>.</p>
+<p>Suppose, <span class="math inline">\(z\)</span> is <em>unknown</em> and it is given that, <span class="math inline">\(\Phi(z)=p\)</span>.</p>
+<p>Then, <span class="math inline">\(z=\Phi^{-1}(p)\)</span></p>
+<p><strong>Example:</strong> Given, <span class="math inline">\(P(Z \le z)=0.9495\)</span>. Find the value of <span class="math inline">\(z\)</span>.</p>
+<p><em>Solution:</em></p>
+<p>We know <span class="math inline">\(P(Z\le z)=\Phi(z)\)</span>.</p>
+<p>Given, <span class="math inline">\(\Phi(z)=0.9495\)</span></p>
+<p><span class="math inline">\(\therefore z=\Phi^{-1}(p)=\Phi^{-1}(0.9495)=1.64\)</span> <span class="math display">\[From z-table, or calculator\]</span></p>
+<p><strong>Exercise 6.7</strong><span class="citation">(<a href="#ref-walpole_probability_2017">Walpole et al. 2017</a>)</span> Given a standard normal distribution, find the value of <span class="math inline">\(k\)</span> such that:</p>
+<ol style="list-style-type: lower-alpha">
+<li>P (Z &gt; k) = 0.2946; (b) P (Z &lt;k) = 0.0427; (c) P (-0.93 &lt; Z &lt; k) = 0.7235.</li>
+</ol>
+<p><strong>Relation with X</strong></p>
+<p>If, <span class="math inline">\(P(X\le x)=p\)</span>; then</p>
+<p><span class="math inline">\(x=\mu+z*\sigma\)</span>; where, <span class="math inline">\(z=\Phi^{-1}(p)\)</span></p>
+<p><strong>Exercise 6.9</strong><span class="citation">(<a href="#ref-walpole_probability_2017">Walpole et al. 2017</a>)</span> Given the normally distributed variable <span class="math inline">\(X\)</span> with mean 18 and standard deviation 2.5, find:</p>
+<ol style="list-style-type: lower-alpha">
+<li>P (X &lt; 15); (b) the value of k such that P (X &lt; k) = 0.2236;</li>
+<li>the value of k such that P (X &gt; k) = 0.1814;</li>
+</ol>
+<p><strong>Finding percentiles:</strong> Given,<span class="math inline">\(X\sim N(20,4)\)</span>. Compute 75th percentile (<span class="math inline">\(P_{75}\)</span>)</p>
+<p><strong>Solution</strong> To find <span class="math inline">\(P_{75}\)</span>, we have to solve the following equation:</p>
+<p><span class="math inline">\(P(X \le P_{75})=0.75\)</span></p>
+<p><span class="math inline">\(\Rightarrow P_{75}=\mu+ z*\sigma\)</span>; where <span class="math inline">\(z=\Phi ^{-1}(0.75)\)</span>=0.67</p>
+<p><span class="math inline">\(\Rightarrow P_{75}=20+ (0.67)*4=22.68\)</span></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><strong>H.W:</strong> Given,<span class="math inline">\(X\sim N(18,2.5)\)</span>. Find <span class="math inline">\(50^{th}\)</span> percentile (<span class="math inline">\(P_{50}\)</span>) and <span class="math inline">\(90^{th}\)</span> percentile (<span class="math inline">\(P_{90}\)</span>) of <span class="math inline">\(X\)</span>.</p>
+<p><strong>Applications of the Normal Distribution</strong><span class="citation">(<a href="#ref-walpole_probability_2017">Walpole et al. 2017</a>)</span></p>
+<p><strong>Example 6.7</strong>: A certain type of storage battery lasts, on average, 3.0 years with a standard deviation of 0.5 year. Assuming that battery life is normally distributed, find the probability that a given battery will last less than 2.3 years.</p>
+<p><strong>Example 6.8</strong> : An electrical firm manufactures light bulbs that have a life, before burn-out, that is normally distributed with mean equal to 800 hours and a standard deviation of 40 hours. Find the probability that a bulb burns between 778 and 834 hours.</p>
+<p><strong>Example 6.9</strong> : In an industrial process, the diameter of a ball bearing is an important measurement. The buyer sets specifications for the diameter to be <span class="math inline">\(3.0 \pm 0.01\)</span> cm. The implication is that no part falling outside these specifications will be accepted. It is known that in the process the diameter of a ball bearing has a normal distribution with mean <span class="math inline">\(\mu = 3.0\)</span> and standard deviation <span class="math inline">\(\sigma = 0.005\)</span>. On average, how many manufactured ball bearings will be scrapped?</p>
+<p><strong>Example 6.10</strong> : Gauges are used to reject all components for which a certain dimension is not within the specification <span class="math inline">\(1.50 \pm d\)</span>. It is known that this measurement is normally distributed with a mean of 1.50 and a standard deviation of 0.2. Determine the value d such that the specifications “cover” 95% of the measurements.</p>
+<p><strong>Solution:</strong></p>
+<p>Let, <span class="math inline">\(X=measurement \ \ of \ \ certain \ \ dimension\)</span></p>
+<p>Given, <span class="math inline">\(X\sim N(1.5,0.2)\)</span></p>
+<p>According to question,</p>
+<p><span class="math inline">\(P(1.5-d&lt;X&lt;1.5+d)=0.95\)</span></p>
+<p>So, <span class="math inline">\(P(X&lt;1.5-d)+P(X&gt;1.5+d)=0.05\)</span></p>
+<p><img src="Walpole%20Example%206.10.png" /></p>
+<p>So, <span class="math inline">\(P(X &lt;1.5-d)=0.025\)</span></p>
+<p><span class="math inline">\(\implies 1.5-d=\mu+z*\sigma\)</span></p>
+<p><span class="math inline">\(\implies 1.5-d=1.5+(-1.96)*0.2\)</span> <span class="math display">\[Since, $z=\Phi^{-1}(0.025)=-1.96\]</span>$</p>
+<p><span class="math inline">\(1.5-d=1.108\)</span></p>
+<p><span class="math inline">\(\therefore d=0.392\)</span></p>
+<p><strong>Exercise 6.11</strong> : A soft-drink machine is regulated so that it discharges an average of 200 milliliters per cup. If the amount of drink is normally distributed with a standard deviation equal to 15 milliliters,</p>
+<ol style="list-style-type: lower-alpha">
+<li>what fraction of the cups will contain more than 224 milliliters?</li>
+<li>what is the probability that a cup contains between 191 and 209 milliliters?</li>
+<li>how many cups will probably overflow if 230-milliliter cups are used for the next 1000 drinks?</li>
+<li>below what value do we get the smallest 25% of the drinks?</li>
+</ol>
+<p><strong>Exercise 6.14</strong> The finished inside diameter of a piston ring is normally distributed with a mean of 10 centimeters and a standard deviation of 0.03 centimeter.</p>
+<ol style="list-style-type: lower-alpha">
+<li>What proportion of rings will have inside diameters exceeding 10.075 centimeters?</li>
+<li>What is the probability that a piston ring will have an inside diameter between 9.97 and 10.03 centimeters?</li>
+<li>Below what value of inside diameter will 15% of the piston rings fall?</li>
+</ol>
+<p><strong>Exercise 6.17</strong> : The average life of a certain type of small motor is 10 years with a standard deviation of 2 years. The manufacturer replaces free all motors that fail while under guarantee. If she is willing to replace only 3% of the motors that fail, how long a guarantee should be offered? Assume that the lifetime of a motor follows a normal distribution.</p>
+
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-baron_probability_2019" class="csl-entry">
+Baron, Michael. 2019. <em>Probability and Statistics for Computer Scientists</em>. Third edition. Boca Raton: CRC Press, Taylor &amp; Francis Group.
+</div>
+<div id="ref-navidi_statistics_2011" class="csl-entry">
+Navidi, William Cyrus. 2011. <em>Statistics for Engineers and Scientists</em>. 3rd ed. New York: McGraw-Hill.
+</div>
+<div id="ref-walpole_probability_2017" class="csl-entry">
+Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, and Keying Ye, eds. 2017. <em>Probability &amp; Statistics for Engineers &amp; Scientists: <span>MyStatLab</span> Update</em>. Ninth edition. Boston: Pearson.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="continuous-random-variable.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/Saifuddin86/Statistics_and_Probability_eBook6Some_special_continuous_rv.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
